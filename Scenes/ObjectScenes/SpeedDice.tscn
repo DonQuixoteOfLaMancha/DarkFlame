@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxisxrre17kba"]
+
+[ext_resource type="Script" path="res://Scripts/ObjectScripts/SpeedDice.cs" id="1_7oc07"]
+[ext_resource type="PackedScene" uid="uid://dnxnigpv47gvo" path="res://Scenes/ObjectScenes/CombatCard.tscn" id="2_bf2vs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dtskm"]
+
+[node name="Speed Dice" type="Node2D"]
+position = Vector2(10, 10)
+script = ExtResource("1_7oc07")
+
+[node name="Outline" type="Line2D" parent="."]
+z_index = 2
+points = PackedVector2Array(0, 201, 0, 200, 100, 0, 350, 0, 450, 200, 350, 400, 100, 400, 0, 200, 0, 199)
+width = 20.0
+default_color = Color(0.372549, 0.168627, 0.0862745, 1)
+
+[node name="Backer" type="Polygon2D" parent="."]
+z_index = 1
+color = Color(0.486275, 0.223529, 0.113725, 1)
+polygon = PackedVector2Array(0, 200, 100, 0, 350, 0, 450, 200, 350, 400, 100, 400)
+
+[node name="Value" type="Label" parent="."]
+z_index = 1
+offset_right = 450.0
+offset_bottom = 400.0
+theme_override_colors/font_color = Color(0.741176, 0.545098, 0.0156863, 1)
+theme_override_font_sizes/font_size = 290
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LmbButton" type="Button" parent="."]
+z_index = 3
+offset_right = 450.0
+offset_bottom = 400.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dtskm")
+flat = true
+
+[node name="CombatCard" parent="." instance=ExtResource("2_bf2vs")]
+visible = false
+position = Vector2(-80, -800)
+scale = Vector2(3, 3)
+
+[node name="TargetingCrosshair" type="Node2D" parent="."]
+visible = false
+z_index = 2
+
+[node name="Circle" type="Line2D" parent="TargetingCrosshair"]
+points = PackedVector2Array(-1235, 0, -1137.5, -325, -812.5, -812.5, -325, -1137.5, 0, -1235, 325, -1137.5, 812.5, -812.5, 1137.5, -325, 1235, 0, 1137.5, 325, 812.5, 812.5, 325, 1137.5, 0, 1235, -325, 1137.5, -812.5, 812.5, -1137.5, 325)
+closed = true
+width = 40.0
+default_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+joint_mode = 2
+
+[node name="LineLeft" type="Line2D" parent="TargetingCrosshair"]
+points = PackedVector2Array(-1100, 0, -1500, 0)
+closed = true
+width = 60.0
+default_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LineTop" type="Line2D" parent="TargetingCrosshair"]
+points = PackedVector2Array(0, -1100, 0, -1500)
+closed = true
+width = 60.0
+default_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LineRight" type="Line2D" parent="TargetingCrosshair"]
+points = PackedVector2Array(1100, 0, 1500, 0)
+closed = true
+width = 60.0
+default_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LineDown" type="Line2D" parent="TargetingCrosshair"]
+points = PackedVector2Array(0, 1100, 0, 1500)
+closed = true
+width = 60.0
+default_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[connection signal="mouse_entered" from="LmbButton" to="." method="Hovered"]
+[connection signal="mouse_exited" from="LmbButton" to="." method="Unhovered"]
+[connection signal="pressed" from="LmbButton" to="." method="Clicked"]

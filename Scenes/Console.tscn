@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvyppopn2jw7t"]
+
+[ext_resource type="Script" path="res://Scripts/PopUpMenuScripts/Console.cs" id="1_8s1aj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_em3dw"]
+bg_color = Color(0.486275, 0.223529, 0.113725, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.372549, 0.168627, 0.0862745, 1)
+corner_radius_bottom_right = 20
+corner_detail = 10
+
+[sub_resource type="Theme" id="Theme_1q3hf"]
+Panel/styles/panel = SubResource("StyleBoxFlat_em3dw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5u14p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhor4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8hdk"]
+
+[node name="Console" type="Node2D"]
+script = ExtResource("1_8s1aj")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 750.0
+offset_bottom = 600.0
+theme = SubResource("Theme_1q3hf")
+
+[node name="Output" type="TextEdit" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 740.0
+offset_bottom = 525.0
+theme_override_colors/font_readonly_color = Color(0.741176, 0.545098, 0.0156863, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5u14p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mhor4")
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+
+[node name="OutputInputBorder" type="Line2D" parent="."]
+position = Vector2(0, 520)
+points = PackedVector2Array(0, 0, 750, 0)
+default_color = Color(0.372549, 0.168627, 0.0862745, 1)
+
+[node name="Input" type="TextEdit" parent="."]
+offset_left = 5.0
+offset_top = 525.0
+offset_right = 670.0
+offset_bottom = 590.0
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Enter Commands Here"
+context_menu_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="SendInput" type="Button" parent="."]
+offset_left = 675.0
+offset_top = 530.0
+offset_right = 735.0
+offset_bottom = 585.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n8hdk")
+text = ">"
+flat = true
+
+[connection signal="pressed" from="SendInput" to="." method="_SendInput"]

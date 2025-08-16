@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnxnigpv47gvo"]
+
+[ext_resource type="Script" path="res://Scripts/ObjectScripts/CombatCard.cs" id="1_e6f6n"]
+
+[node name="CombatCard" type="Node2D"]
+script = ExtResource("1_e6f6n")
+
+[node name="Backboard" type="Polygon2D" parent="."]
+z_index = -1
+color = Color(0.180392, 0.529412, 0.6, 1)
+polygon = PackedVector2Array(0, 0, 200, 0, 200, 260, 0, 260)
+
+[node name="StaminaCostBacker" type="Polygon2D" parent="."]
+z_index = 1
+scale = Vector2(5, 5)
+color = Color(0.486275, 0.223529, 0.113725, 1)
+polygon = PackedVector2Array(0, 0, 10, 0, 9.5, 3.1, 9, 4.4, 8.5, 5.3, 8, 6, 7.5, 6.6, 7.1, 7.1, 6.6, 7.5, 6, 8, 5.3, 8.5, 4.4, 9, 3.1, 9.5, 0, 10)
+
+[node name="ImageBorder" type="Line2D" parent="."]
+position = Vector2(0, 100)
+points = PackedVector2Array(0, 0, 200, 0)
+width = 2.0
+default_color = Color(0.372549, 0.168627, 0.0862745, 1)
+
+[node name="StaminaCost" type="Label" parent="."]
+z_index = 1
+offset_top = -8.0
+offset_right = 34.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.741176, 0.545098, 0.0156863, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 40
+text = " 8"
+horizontal_alignment = 1
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(100, 50)
+
+[node name="Name" type="Label" parent="."]
+offset_top = 100.0
+offset_right = 200.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 28
+text = "NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Conditional" type="Label" parent="."]
+offset_top = 130.0
+offset_right = 200.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+theme_override_font_sizes/font_size = 12
+text = "Card Conditional"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DevaNumber" type="Label" parent="."]
+visible = false
+z_index = -1
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.65098, 0.65098, 0.65098, 1)
+theme_override_font_sizes/font_size = 20
+text = "9  9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9"
+horizontal_alignment = 1
+
+[node name="Border" type="Line2D" parent="."]
+z_index = 1
+position = Vector2(2, 2)
+points = PackedVector2Array(-2, 0, 196, 0, 196, 256, 0, 256, 0, -2)
+width = 4.0
+default_color = Color(0.372549, 0.168627, 0.0862745, 1)

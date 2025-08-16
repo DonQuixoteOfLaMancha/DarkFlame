@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dljlhvuejtxej"]
+
+[ext_resource type="Texture2D" uid="uid://bml23t6bmk08d" path="res://NecessaryContent/Paper Background Texture.png" id="1_akoc7"]
+[ext_resource type="Texture2D" uid="uid://1pahmh5y3m8q" path="res://icon.svg" id="2_8an2o"]
+
+[node name="LoadingScreen" type="Node2D"]
+
+[node name="PaperBackgroundTexture" type="Sprite2D" parent="."]
+scale = Vector2(1.92, 1.08)
+texture = ExtResource("1_akoc7")
+centered = false
+
+[node name="DarkFlameLogo" type="Sprite2D" parent="."]
+position = Vector2(960, 390)
+texture = ExtResource("2_8an2o")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 290.0
+offset_top = 540.0
+offset_right = 1630.0
+offset_bottom = 840.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 80
+text = "Please be patient whilst the game loads everything. It may take a while."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

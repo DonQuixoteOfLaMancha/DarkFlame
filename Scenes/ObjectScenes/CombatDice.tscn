@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvg1jm6p065xk"]
+
+[ext_resource type="Script" path="res://Scripts/ObjectScripts/CombatDice.cs" id="1_m8q2w"]
+
+[node name="CombatDice" type="Node2D"]
+script = ExtResource("1_m8q2w")
+
+[node name="Hexagon" type="Polygon2D" parent="."]
+position = Vector2(0, 12)
+scale = Vector2(3, 3)
+color = Color(0.321569, 0.321569, 0.341176, 1)
+polygon = PackedVector2Array(0, 0, 3, -4, 8, -4, 11, 0, 8, 4, 3, 4, 0, 0)
+
+[node name="TypeIcon" type="Sprite2D" parent="."]
+position = Vector2(16, 12)
+scale = Vector2(0.167, 0.167)
+
+[node name="Range" type="Label" parent="."]
+offset_right = 33.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0.741176, 0.545098, 0.0156863, 1)
+theme_override_font_sizes/font_size = 14
+text = "8~8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Conditional" type="Label" parent="."]
+offset_left = 33.0
+offset_right = 73.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 8
+text = "Dice Conditional"
+vertical_alignment = 1

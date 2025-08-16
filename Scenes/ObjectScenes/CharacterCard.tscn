@@ -1,0 +1,152 @@
+[gd_scene load_steps=2 format=3 uid="uid://co46thnqcb5ew"]
+
+[ext_resource type="Script" path="res://Scripts/ObjectScripts/CharacterCard.cs" id="1_m8tqm"]
+
+[node name="CharacterCard" type="Node2D"]
+script = ExtResource("1_m8tqm")
+
+[node name="Backboard" type="Polygon2D" parent="."]
+color = Color(0.8, 0.8, 0.8, 1)
+polygon = PackedVector2Array(0, 0, 200, 0, 200, 260, 0, 260)
+
+[node name="Border" type="Line2D" parent="."]
+position = Vector2(2, 2)
+points = PackedVector2Array(-2, 0, 196, 0, 196, 256, 0, 256, 0, -2)
+width = 4.0
+default_color = Color(0.372549, 0.168627, 0.0862745, 1)
+
+[node name="DevaNumber" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.65098, 0.65098, 0.65098, 1)
+theme_override_font_sizes/font_size = 20
+text = "9  9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9  9
+9  9  9  9  9  9  9  9"
+horizontal_alignment = 1
+
+[node name="IdleSprite" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(52, 52)
+scale = Vector2(0.06, 0.06)
+
+[node name="ImageBorder" type="Line2D" parent="."]
+position = Vector2(4, 4)
+points = PackedVector2Array(0, 100, 100, 100, 100, 0)
+width = 2.0
+default_color = Color(0.372549, 0.168627, 0.0862745, 1)
+
+[node name="Resistances" type="Node2D" parent="."]
+position = Vector2(100, 0)
+
+[node name="SlashRes" type="Label" parent="Resistances"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+theme_override_font_sizes/font_size = 24
+text = "2.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PierceRes" type="Label" parent="Resistances"]
+offset_left = 5.0
+offset_top = 44.0
+offset_right = 45.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+theme_override_font_sizes/font_size = 24
+text = "2.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BluntRes" type="Label" parent="Resistances"]
+offset_left = 5.0
+offset_top = 83.0
+offset_right = 45.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0.658824, 0.0941176, 0.0627451, 1)
+theme_override_font_sizes/font_size = 24
+text = "2.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlashStagRes" type="Label" parent="Resistances"]
+offset_left = 55.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.882353, 0.65098, 0.145098, 1)
+theme_override_font_sizes/font_size = 24
+text = "2.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PierceStagRes" type="Label" parent="Resistances"]
+offset_left = 55.0
+offset_top = 44.0
+offset_right = 95.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.882353, 0.65098, 0.145098, 1)
+theme_override_font_sizes/font_size = 24
+text = "2.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BluntStagRes" type="Label" parent="Resistances"]
+offset_left = 55.0
+offset_top = 83.0
+offset_right = 95.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0.882353, 0.65098, 0.145098, 1)
+theme_override_font_sizes/font_size = 24
+text = "2.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Info" type="Node2D" parent="."]
+position = Vector2(0, 120)
+
+[node name="Name" type="Label" parent="Info"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 195.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+text = "Name"
+vertical_alignment = 1
+
+[node name="MaxHP" type="Label" parent="Info"]
+offset_left = 5.0
+offset_top = 36.0
+offset_right = 195.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+text = "HP:"
+vertical_alignment = 1
+
+[node name="MaxStagHP" type="Label" parent="Info"]
+offset_left = 5.0
+offset_top = 67.0
+offset_right = 195.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+text = "STAGGER:"
+vertical_alignment = 1
+
+[node name="SpeedRange" type="Label" parent="Info"]
+offset_left = 5.0
+offset_top = 98.0
+offset_right = 195.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+text = "8~8"
+vertical_alignment = 1

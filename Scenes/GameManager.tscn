@@ -1,0 +1,155 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckbfhlrsl3vcd"]
+
+[ext_resource type="Script" path="res://Scripts/ManagerScripts/GameManager.cs" id="1_3sxec"]
+[ext_resource type="Texture2D" uid="uid://br4xo62qnb4cm" path="res://NecessaryContent/Speaker_Icon.svg" id="2_ra208"]
+[ext_resource type="Script" path="res://Scripts/PopUpMenuScripts/Settings.cs" id="3_piumi"]
+[ext_resource type="Texture2D" uid="uid://2nie26vwvdod" path="res://NecessaryContent/ButtonMiniClose.png" id="3_v40m5"]
+[ext_resource type="Texture2D" uid="uid://c5nhj3l2vvupu" path="res://NecessaryContent/SFXIcon.svg" id="6_abejh"]
+[ext_resource type="Texture2D" uid="uid://cvjlikcu2eaap" path="res://NecessaryContent/MusicIcon.svg" id="7_rcw60"]
+[ext_resource type="PackedScene" uid="uid://dvyppopn2jw7t" path="res://Scenes/Console.tscn" id="8_fw1kt"]
+[ext_resource type="PackedScene" uid="uid://dljlhvuejtxej" path="res://Scenes/LoadingScreen.tscn" id="8_pp3wc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpbqk"]
+bg_color = Color(0.705882, 0.368627, 0.231373, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.372549, 0.168627, 0.0862745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 4
+
+[sub_resource type="Theme" id="Theme_b6ygr"]
+Panel/styles/panel = SubResource("StyleBoxFlat_xpbqk")
+
+[node name="GameManagerNode" type="Node2D"]
+script = ExtResource("1_3sxec")
+
+[node name="SettingsMenu" type="Node2D" parent="."]
+visible = false
+top_level = true
+z_index = 50
+z_as_relative = false
+position = Vector2(760, 240)
+script = ExtResource("3_piumi")
+
+[node name="BackPanel" type="Panel" parent="SettingsMenu"]
+z_index = -1
+offset_right = 400.0
+offset_bottom = 600.0
+theme = SubResource("Theme_b6ygr")
+
+[node name="Title" type="RichTextLabel" parent="SettingsMenu"]
+offset_left = 100.0
+offset_right = 300.0
+offset_bottom = 69.0
+bbcode_enabled = true
+text = "[color=#404040][font_size=50]Settings[/font_size][/color]"
+fit_content = true
+shortcut_keys_enabled = false
+metadata/_edit_use_anchors_ = true
+
+[node name="MasterVolume" type="Node2D" parent="SettingsMenu"]
+z_index = 1
+
+[node name="MasterVolumeSprite" type="Sprite2D" parent="SettingsMenu/MasterVolume"]
+position = Vector2(50, 110)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ra208")
+
+[node name="MasterVolumeControl" type="HSlider" parent="SettingsMenu/MasterVolume"]
+offset_left = 90.0
+offset_top = 100.0
+offset_right = 390.0
+offset_bottom = 116.0
+max_value = 1.0
+step = 0.005
+value = 1.0
+scrollable = false
+metadata/_edit_use_anchors_ = true
+
+[node name="SFX" type="Node2D" parent="SettingsMenu"]
+z_index = 1
+position = Vector2(0, 80)
+
+[node name="SFXSprite" type="Sprite2D" parent="SettingsMenu/SFX"]
+position = Vector2(50, 110)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("6_abejh")
+
+[node name="SFXVolumeControl" type="HSlider" parent="SettingsMenu/SFX"]
+offset_left = 90.0
+offset_top = 100.0
+offset_right = 390.0
+offset_bottom = 116.0
+max_value = 1.0
+step = 0.005
+value = 1.0
+scrollable = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Music" type="Node2D" parent="SettingsMenu"]
+z_index = 1
+position = Vector2(0, 160)
+
+[node name="MusicSprite" type="Sprite2D" parent="SettingsMenu/Music"]
+position = Vector2(50, 110)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("7_rcw60")
+
+[node name="MusicVolumeControl" type="HSlider" parent="SettingsMenu/Music"]
+offset_left = 90.0
+offset_top = 100.0
+offset_right = 390.0
+offset_bottom = 116.0
+max_value = 1.0
+step = 0.005
+value = 1.0
+scrollable = false
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" type="TextureButton" parent="SettingsMenu"]
+z_index = 1
+offset_left = 365.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 35.0
+texture_normal = ExtResource("3_v40m5")
+
+[node name="ExitBattleButton" type="Button" parent="SettingsMenu"]
+offset_left = 275.0
+offset_top = 555.0
+offset_right = 395.0
+offset_bottom = 595.0
+text = "To Main Menu"
+
+[node name="Console" parent="." instance=ExtResource("8_fw1kt")]
+visible = false
+z_index = 100
+
+[node name="LoadingScreen" parent="." instance=ExtResource("8_pp3wc")]
+z_index = 500
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="UI" type="Node" parent="AudioPlayers"]
+
+[node name="UI_Click" type="AudioStreamPlayer" parent="AudioPlayers/UI"]
+bus = &"Sound Effects"
+
+[connection signal="drag_ended" from="SettingsMenu/MasterVolume/MasterVolumeControl" to="AudioPlayers/UI/UI_Click" method="play"]
+[connection signal="drag_started" from="SettingsMenu/MasterVolume/MasterVolumeControl" to="AudioPlayers/UI/UI_Click" method="play"]
+[connection signal="value_changed" from="SettingsMenu/MasterVolume/MasterVolumeControl" to="SettingsMenu" method="_On_Master_Volume_Changed"]
+[connection signal="drag_ended" from="SettingsMenu/SFX/SFXVolumeControl" to="AudioPlayers/UI/UI_Click" method="play"]
+[connection signal="drag_started" from="SettingsMenu/SFX/SFXVolumeControl" to="AudioPlayers/UI/UI_Click" method="play"]
+[connection signal="value_changed" from="SettingsMenu/SFX/SFXVolumeControl" to="SettingsMenu" method="_On_SFX_Volume_Changed"]
+[connection signal="drag_ended" from="SettingsMenu/Music/MusicVolumeControl" to="AudioPlayers/UI/UI_Click" method="play"]
+[connection signal="drag_started" from="SettingsMenu/Music/MusicVolumeControl" to="AudioPlayers/UI/UI_Click" method="play"]
+[connection signal="value_changed" from="SettingsMenu/Music/MusicVolumeControl" to="SettingsMenu" method="_On_Music_Volume_Changed"]
+[connection signal="pressed" from="SettingsMenu/CloseButton" to="SettingsMenu" method="_On_Close_Pressed"]
+[connection signal="pressed" from="SettingsMenu/CloseButton" to="AudioPlayers/UI/UI_Click" method="play"]
+[connection signal="pressed" from="SettingsMenu/ExitBattleButton" to="SettingsMenu" method="_On_ExitBattle_Pressed"]
+[connection signal="pressed" from="SettingsMenu/ExitBattleButton" to="AudioPlayers/UI/UI_Click" method="play"]

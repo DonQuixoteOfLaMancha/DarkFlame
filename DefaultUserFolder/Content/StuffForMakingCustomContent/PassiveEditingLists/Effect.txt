@@ -1,0 +1,45 @@
+Format:
+Effe0 - EffectTarget
+Effe1 - EffectProperty (Thing affected)
+Effe2 - EffectType (Operation)
+Effe3 - EffectValue
+
+
+Effe0 values:
+Roll - Uses the current roll as the EffectProperty, nullifies Effe1 and uses User as EffectTarget for Effe3, does not apply to triggers which don't relate to clashing
+User - The character whom the conditional belongs to
+Target - The character being targeted, does not apply to triggers which don't relate to clashing
+
+
+Effe1 values:
+Health - EffectTarget's health
+StaggerHealth - EffectTarget's stagger health
+Stamina - EffectTarget's stamina
+MaxHealth - EffectTarget's max health
+MaxStaggerHealth - EffectTarget's max stagger
+MaxStamina - EffectTarget's max stamina
+SpeedDie - EffectTarget's speed dice count
+EmotionPoints - EffectTarget's emotion points
+Draw - Makes the EffectTarget draw EffectValue cards, nullifies EffectType
+Discard - Makes the EffectTarget discard EffectValue cards, nullifies EffectType
+Status.[IDENTIFIER] - The count of the status effect with the given identifier on EffectTarget
+
+
+Effe2 values:
+Inc - Adds EffectValue to EffectProperty
+Dec - Subtracts EffectValue from EffectProperty
+Set - Sets EffectProperty to EffectValue
+Mlt - Multiplies EffectProperty by EffectValue
+Div - Divides EffectProperty by EffectValue
+
+
+Effe3 values:
+Health - EffectTarget's health
+StaggerHealth - EffectTarget's stagger health
+Stamina - EffectTarget's stamina
+MaxHealth - EffectTarget's max health
+MaxStaggerHealth - EffectTarget's max stagger
+MaxStamina - EffectTarget's max stamina
+EmotionLvl - EffectTarget's emotion level
+Status.[IDENTIFIER] - The count of the status effect with the given identifier on EffectTarget
+[ANY NUMBER] - The given number

@@ -1,0 +1,18 @@
+BATTLESTART - Passive only, triggers at the start of a battle
+ENCOUNTERSTART - Passive only, triggers at the start of an encounter (part of a battle)
+TURNSTART - Passive/Status, triggers at the start of a new turn
+COMBATSTART - Passive/Status/Combat Card, triggers when the player initiates the combat/action phase of a turn
+COMBATEND - Passive/Status, triggers at the end of the Combat Phase
+SONGEND - Passive/Status, triggers when the current BGM ends
+
+ONUSE -	Combat Card only, triggers when the card is used in the action phase
+ONROLL - Passive/Status/Combat Dice, triggers when the dice is rolled in the action phase
+
+ONHIT - Passive/Status/Combat Dice, triggers when the character hits a target
+ONDAMAGED - Passive/Status, triggers when the character takes a hit
+
+CLASHLOSE - Passive/Status/Combat Dice, triggers when the character loses a clash against a target
+CLASHWIN - Passive/Status/Combat Dice, triggers when the character wins a clash against a target
+CLASHDRAW - Passive/Status/Combat Dice, triggers when the character draws in a clash against a target
+
+EMOTIONLVLCHANGE - Passive only, triggers when the character increases in emotion level

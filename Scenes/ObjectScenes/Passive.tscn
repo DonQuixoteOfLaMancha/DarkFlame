@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://86r5ycdwiygh"]
+
+[ext_resource type="Script" path="res://Scripts/ObjectScripts/Passive.cs" id="1_n5rcc"]
+
+[node name="Passive" type="Node2D"]
+script = ExtResource("1_n5rcc")
+
+[node name="Backer" type="Polygon2D" parent="."]
+color = Color(0.486275, 0.223529, 0.113725, 1)
+polygon = PackedVector2Array(0, 0, 314, 0, 314, 60, 0, 60)
+
+[node name="BackerOutline" type="Line2D" parent="."]
+points = PackedVector2Array(0, 2, 312, 2, 312, 58, 2, 58, 2, 0)
+width = 4.0
+default_color = Color(0.372549, 0.168627, 0.0862745, 1)
+
+[node name="Text" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 310.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.741176, 0.545098, 0.0156863, 1)
+theme_override_font_sizes/font_size = 17
+text = "Passive Shenanigans
+
+"
+vertical_alignment = 1
+autowrap_mode = 2

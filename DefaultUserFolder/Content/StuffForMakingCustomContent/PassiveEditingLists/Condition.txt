@@ -1,0 +1,45 @@
+Format:
+Cond0 - CheckTarget
+Cond1 - CheckProperty (LHS of check)
+Cond2 - CheckType (Operator of check)
+Cond3 - CheckValue (RHS of check)
+
+
+Cond0 values:
+Roll - Sets LHS of check to the current roll, nullifies Cond1, does not apply to triggers which don't relate to clashing
+User - The character to whom the conditional belongs to
+Target - The character being targeted, does not apply to triggers which don't relate to clashing
+
+
+Cond1 values:
+Health - CheckTarget's current health
+StaggerHealth - CheckTarget's current stagger health
+Stamina - CheckTarget's current stamina
+MaxHealth - CheckTarget's current max health
+MaxStaggerHealth - CheckTarget's current max stagger health
+MaxStamina - CheckTarget's current max stamina
+Hand - Number of cards in CheckTarget's hand
+SpeedDie - Number of speed die the target has !!!
+EmotionLvl - CheckTarget's current Emotion Level !!!
+DiceType - Number associated with the current rolled dice's type, does not apply to triggers which don't relate to clashing
+Status.[IDENTIFIER] - The count of the status with the specified identifier on CheckTarget (0 if not present)
+
+
+Cond2 values:
+Eq: Equal to, =
+Lt: Less than, <
+Gt: Greater than, >
+Neq: Not equal to, ≠
+
+
+Cond3 values:
+Health - CheckTarget's current health
+StaggerHealth - CheckTarget's current stagger health
+Stamina - CheckTarget's current stamina
+MaxHealth - CheckTarget's current max health
+MaxStaggerHealth - CheckTarget's current max stagger health
+MaxStamina - CheckTarget's current max stamina
+Hand - Number of cards in CheckTarget's hand
+SpeedDie - Number of speed die the target has !!!
+EmotionLvl - CheckTarget's current Emotion Level !!!
+[ANY NUMBER] - The given number

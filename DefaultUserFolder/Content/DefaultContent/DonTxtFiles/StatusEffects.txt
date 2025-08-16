@@ -1,0 +1,12 @@
+==STATUSEFFECT==
+	@STATUSEFFECT@
+		<Name> : #Burn#
+		<Identifier> : #burn#
+		<ImageSource> : #user://Content/DefaultContent/Images/StatusEffectIcons/BurnIcon.png#
+		<Trigger> : #COMBATEND#
+		<Condition> : #[User,Health,Gt,0]#
+		<EffectList> : #[[User,Health,Dec,Status.burn],[User,Status.burn,Div,3]]#
+		<Description> : #At turn end, reduce health by count and lower count.#
+		<AutoDecrement> : #False#
+	@-STATUSEFFECT-@
+==-STATUSEFFECT-==

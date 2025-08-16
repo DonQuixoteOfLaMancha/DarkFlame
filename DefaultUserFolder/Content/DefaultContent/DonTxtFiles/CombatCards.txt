@@ -1,0 +1,144 @@
+==COMBATCARD==
+	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@
+	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@
+	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : ##
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : ##
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@
+	
+	@COMBATCARD@
+		<Name> : #Return to Dust#
+		<CardArtPath> : # #
+		<StrengthGrade> : #9#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #100#
+		<MaxRoll> : #100#
+		<DiceType> : #8#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@
+	
+	
+	@COMBATCARD@
+		<Name> : #B.o.D.#
+		<CardArtPath> : #user://Content/DefaultContent/Images/CombatCardArt/BoD.png#
+		<StrengthGrade> : #2#
+		<StaminaCost> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #1#
+		<ConditionalTrigger> : #ONROLL#
+		<Condition> : #[Roll,,Gt,3]#
+		<Effect> : #[Roll,,Inc,45]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@
+	
+	@COMBATCARD@
+		<Name> : #Set Fire#
+		<CardArtPath> : #CombatCardDefaultImagePath#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #2#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #2#
+		<ConditionalTrigger> : #ONHIT#
+		<Condition> : #[User,Health,Gt,0]#
+		<Effect> : #[Target,Status.burn,Inc,3]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #2#
+		<ConditionalTrigger> : #ONHIT#
+		<Condition> : #[User,Health,Gt,0]#
+		<Effect> : #[Target,Status.burn,Inc,3]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@
+==-COMBATCARD-==

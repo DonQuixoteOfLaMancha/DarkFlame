@@ -1,0 +1,1171 @@
+==BATTLE==
+	@BATTLE@
+		<Name> : #HHPP#
+		<ImgPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<Author> : #DonQui#
+		<Description> : #The default battle, used to ensure there is a usable battle at all times, even if the DonTxts are all deleted.#
+		<DiffGrade> : #1#
+		<Encounters> : #[	@ENCOUNTER@
+		<Enemies> : #[	@CHARACTER@
+		<Name> : #Head Lollang#
+		<CosmeticAttributes> : #[0,1,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Washed-Up Grade 9 Fixer#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<EyeOrigins> : #[[500,430][444,498][732,458][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<MouthOrigins> : #[[520,510][464,578][752,538][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<FrontHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<Health> : #30#
+		<StaggerHealth> : #15#
+		<SlashRes> : #1#
+		<PierceRes> : #1.5#
+		<BluntRes> : #2#
+		<SlashStagRes> : #1#
+		<PierceStagRes> : #1.5#
+		<BluntStagRes> : #2#
+		<MinSpeed> : #1#
+		<MaxSpeed> : #4#
+		<StrengthGrade> : #1#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #50#
+		<HairGreen> : #50#
+		<HairBlue> : #50#
+		<Deck> : #[	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,]#
+	@-CHARACTER-@,	@CHARACTER@
+		<Name> : #Library Servant#
+		<CosmeticAttributes> : #[0,1,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Washed-Up Grade 9 Fixer#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<EyeOrigins> : #[[500,430][444,498][732,458][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<MouthOrigins> : #[[520,510][464,578][752,538][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<FrontHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<Health> : #30#
+		<StaggerHealth> : #15#
+		<SlashRes> : #1#
+		<PierceRes> : #1.5#
+		<BluntRes> : #2#
+		<SlashStagRes> : #1#
+		<PierceStagRes> : #1.5#
+		<BluntStagRes> : #2#
+		<MinSpeed> : #1#
+		<MaxSpeed> : #4#
+		<StrengthGrade> : #1#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #50#
+		<HairGreen> : #50#
+		<HairBlue> : #50#
+		<Deck> : #[	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,]#
+	@-CHARACTER-@,	@CHARACTER@
+		<Name> : #A Grade 9 Fixer#
+		<CosmeticAttributes> : #[0,1,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Washed-Up Grade 9 Fixer#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<EyeOrigins> : #[[500,430][444,498][732,458][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<MouthOrigins> : #[[520,510][464,578][752,538][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<FrontHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<Health> : #30#
+		<StaggerHealth> : #15#
+		<SlashRes> : #1#
+		<PierceRes> : #1.5#
+		<BluntRes> : #2#
+		<SlashStagRes> : #1#
+		<PierceStagRes> : #1.5#
+		<BluntStagRes> : #2#
+		<MinSpeed> : #1#
+		<MaxSpeed> : #4#
+		<StrengthGrade> : #1#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #50#
+		<HairGreen> : #50#
+		<HairBlue> : #50#
+		<Deck> : #[	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,]#
+	@-CHARACTER-@,	@CHARACTER@
+		<Name> : #Grade 9 Widower#
+		<CosmeticAttributes> : #[0,1,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Washed-Up Grade 9 Fixer#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<EyeOrigins> : #[[500,430][444,498][732,458][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<MouthOrigins> : #[[520,510][464,578][752,538][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<FrontHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<Health> : #30#
+		<StaggerHealth> : #15#
+		<SlashRes> : #1#
+		<PierceRes> : #1.5#
+		<BluntRes> : #2#
+		<SlashStagRes> : #1#
+		<PierceStagRes> : #1.5#
+		<BluntStagRes> : #2#
+		<MinSpeed> : #1#
+		<MaxSpeed> : #4#
+		<StrengthGrade> : #1#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #50#
+		<HairGreen> : #50#
+		<HairBlue> : #50#
+		<Deck> : #[	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@]#
+	@-CHARACTER-@,	@CHARACTER@
+		<Name> : #Orlando FL#
+		<CosmeticAttributes> : #[0,1,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Washed-Up Grade 9 Fixer#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<EyeOrigins> : #[[500,430][444,498][732,458][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<MouthOrigins> : #[[520,510][464,578][752,538][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<FrontHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<Health> : #30#
+		<StaggerHealth> : #15#
+		<SlashRes> : #1#
+		<PierceRes> : #1.5#
+		<BluntRes> : #2#
+		<SlashStagRes> : #1#
+		<PierceStagRes> : #1.5#
+		<BluntStagRes> : #2#
+		<MinSpeed> : #1#
+		<MaxSpeed> : #4#
+		<StrengthGrade> : #1#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #50#
+		<HairGreen> : #50#
+		<HairBlue> : #50#
+		<Deck> : #[	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,]#
+	@-CHARACTER-@]#
+		<BackGroundImgPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<TargetingType> : #Random#
+	@-ENCOUNTER-@,	@ENCOUNTER@
+		<Enemies> : #[	@CHARACTER@
+		<Name> : #Head Chef Bongbong#
+		<CosmeticAttributes> : #[2,2,1,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Washed-Up Grade 9 Fixer#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<EyeOrigins> : #[[500,430][444,498][732,458][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<MouthOrigins> : #[[520,510][464,578][752,538][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<FrontHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<Health> : #30#
+		<StaggerHealth> : #15#
+		<SlashRes> : #1#
+		<PierceRes> : #1.5#
+		<BluntRes> : #2#
+		<SlashStagRes> : #1#
+		<PierceStagRes> : #1.5#
+		<BluntStagRes> : #2#
+		<MinSpeed> : #1#
+		<MaxSpeed> : #4#
+		<StrengthGrade> : #1#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #0#
+		<HairGreen> : #0#
+		<HairBlue> : #255#
+		<Deck> : #[	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Focus Strikes#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #3#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #3#
+		<MaxRoll> : #5#
+		<DiceType> : #0#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@,	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #3#
+		<DiceType> : #1#
+		<ConditionalTrigger> : ##
+		<Condition> : #[,,,]#
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Evade#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #4#
+		<DiceType> : #4#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@,	@COMBATCARD@
+		<Name> : #Gut Harvesting#
+		<CardArtPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<StrengthGrade> : #1#
+		<StaminaCost> : #1#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+		<Dice> : #[	@COMBATDICE@
+		<MinRoll> : #1#
+		<MaxRoll> : #2#
+		<DiceType> : #0#
+		<ConditionalTrigger> : # #
+		<Condition> : #[,,,]#
+		<Effect> : #[,,,]#
+		<ConditionalDescOverride> : # #
+	@-COMBATDICE-@]#
+	@-COMBATCARD-@]#
+	@-CHARACTER-@,	@CHARACTER@
+		<Name> : #Roland#
+		<CosmeticAttributes> : #[0,0,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Instant Death#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<EyeOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<MouthOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<FrontHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<Health> : #0#
+		<StaggerHealth> : #0#
+		<SlashRes> : #-0.09999999999999987#
+		<PierceRes> : #0.09999999999999981#
+		<BluntRes> : #0.09999999999999937#
+		<SlashStagRes> : #-0.09999999999999987#
+		<PierceStagRes> : #0.09999999999999981#
+		<BluntStagRes> : #0.09999999999999937#
+		<MinSpeed> : #0#
+		<MaxSpeed> : #0#
+		<StrengthGrade> : #0#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #255#
+		<HairGreen> : #255#
+		<HairBlue> : #255#
+		<Deck> : #[]#
+	@-CHARACTER-@,	@CHARACTER@
+		<Name> : #Roland#
+		<CosmeticAttributes> : #[0,0,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Instant Death#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<EyeOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<MouthOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<FrontHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<Health> : #0#
+		<StaggerHealth> : #0#
+		<SlashRes> : #-0.09999999999999987#
+		<PierceRes> : #0.09999999999999981#
+		<BluntRes> : #0.09999999999999937#
+		<SlashStagRes> : #-0.09999999999999987#
+		<PierceStagRes> : #0.09999999999999981#
+		<BluntStagRes> : #0.09999999999999937#
+		<MinSpeed> : #0#
+		<MaxSpeed> : #0#
+		<StrengthGrade> : #0#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #255#
+		<HairGreen> : #255#
+		<HairBlue> : #255#
+		<Deck> : #[]#
+	@-CHARACTER-@,	@CHARACTER@
+		<Name> : #Roland#
+		<CosmeticAttributes> : #[0,0,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Instant Death#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<EyeOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<MouthOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<FrontHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<Health> : #0#
+		<StaggerHealth> : #0#
+		<SlashRes> : #-0.09999999999999987#
+		<PierceRes> : #0.09999999999999981#
+		<BluntRes> : #0.09999999999999937#
+		<SlashStagRes> : #-0.09999999999999987#
+		<PierceStagRes> : #0.09999999999999981#
+		<BluntStagRes> : #0.09999999999999937#
+		<MinSpeed> : #0#
+		<MaxSpeed> : #0#
+		<StrengthGrade> : #0#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #255#
+		<HairGreen> : #255#
+		<HairBlue> : #255#
+		<Deck> : #[]#
+	@-CHARACTER-@,	@CHARACTER@
+		<Name> : #Roland#
+		<CosmeticAttributes> : #[0,0,0,0]#
+		<CharCard> : #	@CHARACTERCARD@
+		<Name> : #Instant Death#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<EyeOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<MouthOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<FrontHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<Health> : #0#
+		<StaggerHealth> : #0#
+		<SlashRes> : #-0.09999999999999987#
+		<PierceRes> : #0.09999999999999981#
+		<BluntRes> : #0.09999999999999937#
+		<SlashStagRes> : #-0.09999999999999987#
+		<PierceStagRes> : #0.09999999999999981#
+		<BluntStagRes> : #0.09999999999999937#
+		<MinSpeed> : #0#
+		<MaxSpeed> : #0#
+		<StrengthGrade> : #0#
+		<Passives> : # #
+	@-CHARACTERCARD-@#
+		<HairRed> : #255#
+		<HairGreen> : #255#
+		<HairBlue> : #255#
+		<Deck> : #[]#
+	@-CHARACTER-@]#
+		<BackGroundImgPath> : #DefaultEncounterBackgroundImagePath#
+		<TargetingType> : #Random#
+	@-ENCOUNTER-@]#
+		<> : # #
+	@-BATTLE-@
+==-BATTLE-==

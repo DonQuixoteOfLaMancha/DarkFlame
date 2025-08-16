@@ -1,0 +1,62 @@
+==CHARACTERCARD==
+	@CHARACTERCARD@
+		<Name> : #Washed-Up Grade 9 Fixer#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<EyeOrigins> : #[[500,430][444,498][732,458][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<MouthOrigins> : #[[520,510][464,578][752,538][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<FrontHairOrigins> : #[[258,160][202,228][490,188][0,0][0,0][0,0][0,0][0,0][1792,1792]]#
+		<Health> : #30#
+		<StaggerHealth> : #15#
+		<SlashRes> : #1#
+		<PierceRes> : #1.5#
+		<BluntRes> : #2#
+		<SlashStagRes> : #1#
+		<PierceStagRes> : #1.5#
+		<BluntStagRes> : #2#
+		<MinSpeed> : #1#
+		<MaxSpeed> : #4#
+		<StrengthGrade> : #1#
+		<Passives> : # #
+	@-CHARACTERCARD-@
+	@CHARACTERCARD@
+		<Name> : #Rampaging Black Silence#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/BlackSilence.png#
+		<BackHairOrigins> : #[[8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009]]#
+		<EyeOrigins> : #[[8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009]]#
+		<MouthOrigins> : #[[8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009]]#
+		<FrontHairOrigins> : #[[8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009]]#
+		<Health> : #106#
+		<StaggerHealth> : #56#
+		<SlashRes> : #1#
+		<PierceRes> : #1#
+		<BluntRes> : #0.5#
+		<SlashStagRes> : #1#
+		<PierceStagRes> : #1#
+		<BluntStagRes> : #0.5#
+		<MinSpeed> : #2#
+		<MaxSpeed> : #7#
+		<StrengthGrade> : #5#
+		<Passives> : # #
+	@-CHARACTERCARD-@
+	@CHARACTERCARD@
+		<Name> : #Instant Death#
+		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
+		<BackHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<EyeOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<MouthOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<FrontHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#
+		<Health> : #0#
+		<StaggerHealth> : #0#
+		<SlashRes> : #2.0#
+		<PierceRes> : #2.0#
+		<BluntRes> : #2.0#
+		<SlashStagRes> : #2.0#
+		<PierceStagRes> : #2.0#
+		<BluntStagRes> : #2.0#
+		<MinSpeed> : #0#
+		<MaxSpeed> : #0#
+		<StrengthGrade> : #0#
+		<Passives> : # #
+	@-CHARACTERCARD-@
+==-CHARACTERCARD-==

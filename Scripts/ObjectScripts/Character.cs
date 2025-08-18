@@ -79,6 +79,11 @@ public partial class Character : Node2D
 	public int DrawAmount = 1;
 	public int SpeedDieCount = 1;
 	
+	public int CardsUsedEncounter = 0;
+	public int CardsUsedBattle = 0;
+	public List<CombatCard> UniqueCardsUsed = new List<CombatCard>();
+	public bool Singleton = false;
+	
 	public bool Staggered = false;
 	private List<StatusEffect> QueuedStatuses = new List<StatusEffect>();
 	public List<StatusEffect> StatusEffects = new List<StatusEffect>();
@@ -322,6 +327,23 @@ public partial class Character : Node2D
 		foreach(StatusEffect RemoveStatus in StatusEffects) {RemoveStatus.QueueFree();}
 		StatusEffects.Clear();
 		if(Health <= 0) {Death();}
+		
+		CardsUsedEncounter = 0;
+		CardsUsedBattle = 0;
+		UniqueCardsUsed.Clear();
+		
+		Singleton = true;
+		for(int Index = 0; Index < 9; Index++)
+		{
+			if(Deck[Index] != null)
+			{
+				if(Array.FindIndex(Deck, x => x.Name.Equals(Deck[Index].Name)) != -1 && Array.FindIndex(Deck, x => x.Name.Equals(Deck[Index].Name)) != Index)
+				{
+					Singleton = false;
+					break;
+				}
+			}
+		}
 	}
 	
 	public void NewTurn()
@@ -390,8 +412,8 @@ public partial class Character : Node2D
 	
 	public void TriggerPassivesAndStatuses(string TriggerIdentifier, SpeedDice OwnerSpeedDice = null)
 	{
-		string[] PassiveTriggers = new string[] {"BATTLESTART","ENCOUNTERSTART","TURNSTART","COMBATSTART","COMBATEND", "SONGEND", "ONROLL", "ONHIT", "ONDAMAGED", "CLASHWIN", "CLASHLOSE", "CLASHDRAW", "EMOTIONLVLCHANGE"};
-		string[] StatusTriggers = new string[] {"TURNSTART","COMBATSTART","COMBATEND", "SONGEND", "ONROLL", "ONHIT", "ONDAMAGED", "CLASHWIN", "CLASHLOSE", "CLASHDRAW"};
+		string[] PassiveTriggers = new string[] {"BATTLESTART","ENCOUNTERSTART","TURNSTART","COMBATSTART","COMBATEND", "SONGEND", "ONROLL", "ONHIT", "ONDAMAGED", "CLASHWIN", "CLASHLOSE", "CLASHDRAW", "EMOTIONLVLCHANGE", "ONCARDUSE", "ONALLYDEATH", "ONENEMYDEATH"};
+		string[] StatusTriggers = new string[] {"TURNSTART","COMBATSTART","COMBATEND", "SONGEND", "ONROLL", "ONHIT", "ONDAMAGED", "CLASHWIN", "CLASHLOSE", "CLASHDRAW", "ONCARDUSE", "ONALLYDEATH", "ONENEMYDEATH"};
 		
 		if(Array.IndexOf(PassiveTriggers, TriggerIdentifier) != -1)
 		{
@@ -453,6 +475,10 @@ public partial class Character : Node2D
 				case "Hand": ValueA = TargetChar.Hand.Count; break;
 				case "SpeedDie": ValueA = TargetChar.SpeedDieCount; break;
 				case "EmotionLvl": ValueA = TargetChar.EmotionLevel; break;
+				case "BattleUsedCards": ValueA = TargetChar.CardsUsedBattle; break;
+				case "EncounterUsedCards": ValueA = TargetChar.CardsUsedEncounter; break;
+				case "UniqueUsedCards": ValueA = TargetChar.UniqueCardsUsed.Count; break;
+				case "Singleton": return TargetChar.Singleton;
 				case "DiceType":
 					if(OwnerDice != null) {if(GetParent().GetParent().GetParent<BattleSceneManager>().BattleChar_Index<OwnerDice.SlotCard.Dice.Count) {ValueA = OwnerDice.SlotCard.Dice[GetParent().GetParent().GetParent<BattleSceneManager>().BattleChar_Index].DiceType;}}
 					break;
@@ -477,6 +503,9 @@ public partial class Character : Node2D
 				case "Hand": ValueB = TargetChar.Hand.Count; break;
 				case "SpeedDie": ValueB = TargetChar.SpeedDieCount; break;
 				case "EmotionLvl": ValueB = TargetChar.EmotionLevel; break;
+				case "BattleUsedCards": ValueB = TargetChar.CardsUsedBattle; break;
+				case "EncounterUsedCards": ValueB = TargetChar.CardsUsedEncounter; break;
+				case "UniqueUsedCards": ValueB = TargetChar.UniqueCardsUsed.Count; break;
 				default:
 					try{ValueB = Convert.ToInt32(Condition[3]);}
 					catch{return false;}
@@ -532,6 +561,9 @@ public partial class Character : Node2D
 				case "MaxStaggerHealth": ValueB = Convert.ToSingle(TargetChar.MaxStaggerHealth); break;
 				case "MaxStamina": ValueB = Convert.ToSingle(TargetChar.MaxStamina); break;
 				case "EmotionLvl": ValueB = Convert.ToSingle(TargetChar.EmotionLevel); break;
+				case "BattleUsedCards": ValueB = Convert.ToSingle(TargetChar.CardsUsedBattle); break;
+				case "EncounterUsedCards": ValueB = Convert.ToSingle(TargetChar.CardsUsedEncounter); break;
+				case "UniqueUsedCards": ValueB = Convert.ToSingle(TargetChar.UniqueCardsUsed.Count); break;
 				default:
 					if(Effect[3].Length>6 && Effect[3].Substring(0, 7) == "Status.")
 					{
@@ -622,12 +654,29 @@ public partial class Character : Node2D
 					if(Effect[2] == "Mlt") {TargetChar.EmotionPoints = Convert.ToInt32((float)TargetChar.EmotionPoints*ValueB);}
 					if(Effect[2] == "Div") {TargetChar.EmotionPoints = Convert.ToInt32((float)TargetChar.EmotionPoints/ValueB);}
 					break;
+				case "BattleUsedCards":
+					if(Effect[2] == "Inc") {TargetChar.CardsUsedBattle += Convert.ToInt32(ValueB);}
+					if(Effect[2] == "Dec") {TargetChar.CardsUsedBattle -= Convert.ToInt32(ValueB);}
+					if(Effect[2] == "Set") {TargetChar.CardsUsedBattle = Convert.ToInt32(ValueB);}
+					if(Effect[2] == "Mlt") {TargetChar.CardsUsedBattle = Convert.ToInt32((float)TargetChar.CardsUsedBattle*ValueB);}
+					if(Effect[2] == "Div") {TargetChar.CardsUsedBattle = Convert.ToInt32((float)TargetChar.CardsUsedBattle/ValueB);}
+					break;
+				case "EncounterUsedCards":
+					if(Effect[2] == "Inc") {TargetChar.CardsUsedEncounter += Convert.ToInt32(ValueB);}
+					if(Effect[2] == "Dec") {TargetChar.CardsUsedEncounter -= Convert.ToInt32(ValueB);}
+					if(Effect[2] == "Set") {TargetChar.CardsUsedEncounter = Convert.ToInt32(ValueB);}
+					if(Effect[2] == "Mlt") {TargetChar.CardsUsedEncounter = Convert.ToInt32((float)TargetChar.CardsUsedEncounter*ValueB);}
+					if(Effect[2] == "Div") {TargetChar.CardsUsedEncounter = Convert.ToInt32((float)TargetChar.CardsUsedEncounter/ValueB);}
+					break;
 				case "Draw":
 					TargetChar.DrawCard(Convert.ToInt32(ValueB));
 					break;
 				case "Discard":
 					while(TargetChar.Hand.Count > 0 && ValueB > 0)
 					{TargetChar.Hand.RemoveAt(RNumGen.Next(0,TargetChar.Hand.Count));}
+					break;
+				case "ResetUniqueCardTracker":
+					TargetChar.UniqueCardsUsed.Clear();
 					break;
 				default:
 					if(Effect[1].Length>6 && Effect[1].Substring(0, 7) == "Status.")
@@ -734,6 +783,16 @@ public partial class Character : Node2D
 		Health = 0;
 		UpdateSpriteState(8);
 		GetChild<Node2D>(5).Hide();
+		
+		//Trigger On ___ death conditionals
+		for(int Index = 0; Index < 5; Index++)
+		{
+			if(GetParent().GetChild<Character>(Index).Health > 0) {GetParent().GetChild<Character>(Index).TriggerPassivesAndStatuses("ONALLYDEATH");}
+			if(GetParent().GetParent().GetChild(0) == GetParent() && GetParent().GetParent().GetChild(1).GetChild<Character>(Index).Health > 0)
+			{GetParent().GetParent().GetChild(1).GetChild<Character>(Index).TriggerPassivesAndStatuses("ONENEMYDEATH");}
+			else if(GetParent().GetParent().GetChild(0).GetChild<Character>(Index).Health > 0)
+			{GetParent().GetParent().GetChild(0).GetChild<Character>(Index).TriggerPassivesAndStatuses("ONENEMYDEATH");}
+		}
 	}
 	
 	//Stuff for storing and loading data

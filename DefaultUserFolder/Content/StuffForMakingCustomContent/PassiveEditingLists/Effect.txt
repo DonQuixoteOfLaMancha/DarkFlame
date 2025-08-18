@@ -20,8 +20,11 @@ MaxStaggerHealth - EffectTarget's max stagger
 MaxStamina - EffectTarget's max stamina
 SpeedDie - EffectTarget's speed dice count
 EmotionPoints - EffectTarget's emotion points
+BattleUsedCards - Number of cards used by the EffectTarget throughout the battle
+EncounterUsedCards - Number of cards used by the EffectTarget within the encounter
 Draw - Makes the EffectTarget draw EffectValue cards, nullifies EffectType
 Discard - Makes the EffectTarget discard EffectValue cards, nullifies EffectType
+ResetUniqueCardTracker - Clears EffectTarget's list of unique cards used, so the value is 0 and all cards can contribute to building it back up again
 Status.[IDENTIFIER] - The count of the status effect with the given identifier on EffectTarget
 
 
@@ -41,5 +44,8 @@ MaxHealth - EffectTarget's max health
 MaxStaggerHealth - EffectTarget's max stagger
 MaxStamina - EffectTarget's max stamina
 EmotionLvl - EffectTarget's emotion level
+BattleUsedCards - Number of cards used by EffectTarget throughout the battle
+EncounterUsedCards - Number of cards used by EffectTarget within the encounter
+UniqueUsedCards - Unique cards used by EffectTarget throughout the battle
 Status.[IDENTIFIER] - The count of the status effect with the given identifier on EffectTarget
 [ANY NUMBER] - The given number

@@ -456,7 +456,6 @@ offset_bottom = 400.0
 flat = true
 
 [node name="DetailedCharInfoMenu" type="Node2D" parent="."]
-visible = false
 z_index = 20
 position = Vector2(250, 100)
 
@@ -514,12 +513,12 @@ max_value = 60.0
 step = 60.0
 page = 60.0
 
-[node name="EmotionLevel" type="Node2D" parent="DetailedCharInfoMenu"]
+[node name="NumbersInfo" type="Node2D" parent="DetailedCharInfoMenu"]
 position = Vector2(440, 40)
 
-[node name="Level" type="Node2D" parent="DetailedCharInfoMenu/EmotionLevel"]
+[node name="Level" type="Node2D" parent="DetailedCharInfoMenu/NumbersInfo"]
 
-[node name="MainText" type="Label" parent="DetailedCharInfoMenu/EmotionLevel/Level"]
+[node name="MainText" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/Level"]
 offset_right = 200.0
 offset_bottom = 40.0
 theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
@@ -527,7 +526,7 @@ theme_override_font_sizes/font_size = 26
 text = "Emotion Level:"
 vertical_alignment = 1
 
-[node name="Num" type="Label" parent="DetailedCharInfoMenu/EmotionLevel/Level"]
+[node name="Num" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/Level"]
 offset_left = 200.0
 offset_right = 240.0
 offset_bottom = 40.0
@@ -537,10 +536,10 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Points" type="Node2D" parent="DetailedCharInfoMenu/EmotionLevel"]
+[node name="Points" type="Node2D" parent="DetailedCharInfoMenu/NumbersInfo"]
 position = Vector2(0, 40)
 
-[node name="MainText" type="Label" parent="DetailedCharInfoMenu/EmotionLevel/Points"]
+[node name="MainText" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/Points"]
 offset_right = 200.0
 offset_bottom = 40.0
 theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
@@ -548,13 +547,97 @@ theme_override_font_sizes/font_size = 26
 text = "Emotion Points:"
 vertical_alignment = 1
 
-[node name="Num" type="Label" parent="DetailedCharInfoMenu/EmotionLevel/Points"]
+[node name="Num" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/Points"]
 offset_left = 200.0
 offset_right = 240.0
 offset_bottom = 40.0
 theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
 theme_override_font_sizes/font_size = 26
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardsUsedB" type="Node2D" parent="DetailedCharInfoMenu/NumbersInfo"]
+position = Vector2(0, 80)
+
+[node name="MainText" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/CardsUsedB"]
+offset_right = 250.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 26
+text = "Cards Used (Battle):"
+vertical_alignment = 1
+
+[node name="Num" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/CardsUsedB"]
+offset_left = 260.0
+offset_right = 300.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 26
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardsUsedE" type="Node2D" parent="DetailedCharInfoMenu/NumbersInfo"]
+position = Vector2(0, 120)
+
+[node name="MainText" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/CardsUsedE"]
+offset_right = 230.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 26
+text = "Cards Used (Enc.):"
+vertical_alignment = 1
+
+[node name="Num" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/CardsUsedE"]
+offset_left = 260.0
+offset_right = 300.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 26
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UniqueCards" type="Node2D" parent="DetailedCharInfoMenu/NumbersInfo"]
+position = Vector2(0, 160)
+
+[node name="MainText" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/UniqueCards"]
+offset_right = 265.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 26
+text = "Cards Used (Unique):"
+vertical_alignment = 1
+
+[node name="Num" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/UniqueCards"]
+offset_left = 260.0
+offset_right = 300.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 26
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Singleton" type="Node2D" parent="DetailedCharInfoMenu/NumbersInfo"]
+position = Vector2(0, 200)
+
+[node name="MainText" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/Singleton"]
+offset_right = 130.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 26
+text = "Singleton:"
+vertical_alignment = 1
+
+[node name="Num" type="Label" parent="DetailedCharInfoMenu/NumbersInfo/Singleton"]
+offset_left = 130.0
+offset_right = 170.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.0392157, 0.054902, 0.219608, 1)
+theme_override_font_sizes/font_size = 26
+text = "False"
 horizontal_alignment = 1
 vertical_alignment = 1
 

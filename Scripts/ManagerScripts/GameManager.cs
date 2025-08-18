@@ -82,7 +82,7 @@ public partial class GameManager : Node2D
 		if(RefreshTicker == 2) {RefreshTicker--;}
 		else if(RefreshTicker == 1) {TrueRefresh();}
 		
-		if(SceneChangeTicker%2 == 0) {SceneChangeTicker--;}
+		if(SceneChangeTicker%2 == 0 && SceneChangeTicker > 0) {SceneChangeTicker--;}
 		else if(SceneChangeTicker == 3) 
 		{
 			if(GetChildCount() > 4) {GetChild(4).QueueFree();}

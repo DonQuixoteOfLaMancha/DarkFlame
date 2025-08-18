@@ -808,7 +808,7 @@
 	@-COMBATDICE-@]#
 	@-COMBATCARD-@,]#
 	@-CHARACTER-@]#
-		<BackGroundImgPath> : #user://Content/DefaultContent/Images/BattleIcons/Defoko.png#
+		<BackGroundImgPath> : #user://Content/DefaultContent/Images/EncounterBackgrounds/Backstreets.png#
 		<TargetingType> : #Random#
 	@-ENCOUNTER-@,	@ENCOUNTER@
 		<Enemies> : #[	@CHARACTER@
@@ -1163,7 +1163,7 @@
 		<HairBlue> : #255#
 		<Deck> : #[]#
 	@-CHARACTER-@]#
-		<BackGroundImgPath> : #DefaultEncounterBackgroundImagePath#
+		<BackGroundImgPath> : #user://Content/DefaultContent/Images/EncounterBackgrounds/Backstreets.png#
 		<TargetingType> : #Random#
 	@-ENCOUNTER-@]#
 		<> : # #

@@ -456,6 +456,7 @@ offset_bottom = 400.0
 flat = true
 
 [node name="DetailedCharInfoMenu" type="Node2D" parent="."]
+visible = false
 z_index = 20
 position = Vector2(250, 100)
 

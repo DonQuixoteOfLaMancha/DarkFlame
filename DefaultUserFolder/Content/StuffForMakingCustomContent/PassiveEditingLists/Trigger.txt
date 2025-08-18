@@ -16,3 +16,8 @@ CLASHWIN - Passive/Status/Combat Dice, triggers when the character wins a clash 
 CLASHDRAW - Passive/Status/Combat Dice, triggers when the character draws in a clash against a target
 
 EMOTIONLVLCHANGE - Passive only, triggers when the character increases in emotion level
+
+ONCARDUSE - Passive/Status, triggers when the character uses a combat card
+
+ONALLYDEATH - Passive/Status, triggers when an ally dies
+ONENEMYDEATH - Passive/Status, triggers when an enemy dies

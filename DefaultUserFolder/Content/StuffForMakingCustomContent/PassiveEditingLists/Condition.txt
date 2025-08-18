@@ -19,8 +19,12 @@ MaxHealth - CheckTarget's current max health
 MaxStaggerHealth - CheckTarget's current max stagger health
 MaxStamina - CheckTarget's current max stamina
 Hand - Number of cards in CheckTarget's hand
-SpeedDie - Number of speed die the target has !!!
-EmotionLvl - CheckTarget's current Emotion Level !!!
+SpeedDie - Number of speed die the target has
+EmotionLvl - CheckTarget's current Emotion Level
+BattleUsedCards - Number of cards used by CheckTarget throughout the battle
+EncounterUsedCards - Number of cards used by CheckTarget within the encounter
+UniqueUsedCards - Unique cards used by CheckTarget throughout the battle
+Singleton - Whether CheckTarget's deck is singleton (no duplicate cards) or not, nullifies Cond2 and Cond3
 DiceType - Number associated with the current rolled dice's type, does not apply to triggers which don't relate to clashing
 Status.[IDENTIFIER] - The count of the status with the specified identifier on CheckTarget (0 if not present)
 
@@ -40,6 +44,9 @@ MaxHealth - CheckTarget's current max health
 MaxStaggerHealth - CheckTarget's current max stagger health
 MaxStamina - CheckTarget's current max stamina
 Hand - Number of cards in CheckTarget's hand
-SpeedDie - Number of speed die the target has !!!
-EmotionLvl - CheckTarget's current Emotion Level !!!
+SpeedDie - Number of speed die the target has
+EmotionLvl - CheckTarget's current Emotion Level
+BattleUsedCards - Number of cards used by CheckTarget throughout the battle
+EncounterUsedCards - Number of cards used by CheckTarget within the encounter
+UniqueUsedCards - Unique cards used by CheckTarget throughout the battle
 [ANY NUMBER] - The given number

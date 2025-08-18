@@ -182,12 +182,23 @@ public partial class BattleSceneManager : Node2D
 				MoveChar_CharacterLeft.SetPosition(new Vector2(MoveChar_CharacterLeft_TargetX, MoveChar_TargetY));
 				MoveChar_CharacterRight.SetPosition(new Vector2(MoveChar_CharacterRight_TargetX, MoveChar_TargetY));
 				
+				BattleChar_Attacker.CardsUsedBattle++;
+				BattleChar_Attacker.CardsUsedEncounter++;
+				if(BattleChar_Attacker.UniqueCardsUsed.FindIndex(x => x.Name.Equals(BattleChar_Attacker_Dice.SlotCard.Name)) == -1)
+				{BattleChar_Attacker.UniqueCardsUsed.Add(BattleChar_Attacker_Dice.SlotCard);}
 				if(BattleChar_Attacker_Dice.SlotCard.ConditionalTrigger == "ONUSE")
 				{TriggerConditional(BattleChar_Attacker_Dice.SlotCard, BattleChar_Attacker);}
+				BattleChar_Attacker.TriggerPassivesAndStatuses("ONCARDUSE");
+					
 				if(BattleChar_Defender_Dice != null)
 				{
+					BattleChar_Defender.CardsUsedBattle++;
+					BattleChar_Defender.CardsUsedEncounter++;
+					if(BattleChar_Defender.UniqueCardsUsed.FindIndex(x => x.Name.Equals(BattleChar_Defender_Dice.SlotCard.Name)) == -1)
+					{BattleChar_Defender.UniqueCardsUsed.Add(BattleChar_Defender_Dice.SlotCard);}
 					if(BattleChar_Defender_Dice.SlotCard.ConditionalTrigger == "ONUSE")
 					{TriggerConditional(BattleChar_Defender_Dice.SlotCard, BattleChar_Defender);}
+					BattleChar_Defender.TriggerPassivesAndStatuses("ONCARDUSE");
 				}
 				
 				MoveChar_Active = false;
@@ -250,7 +261,7 @@ public partial class BattleSceneManager : Node2D
 				}
 				else
 				{
-					//Add emotion points for min or max rolls, and trigger ONROLL conditionals
+						//Add emotion points for min or max rolls, and trigger ONROLL conditionals
 					if(BattleChar_Index < BattleChar_Attacker_Dice.SlotCard.Dice.Count)
 					{
 						if(BattleChar_Attacker_Dice.Value == BattleChar_Attacker_Dice.SlotCard.Dice[BattleChar_Index].MinRoll || BattleChar_Attacker_Dice.Value == BattleChar_Attacker_Dice.SlotCard.Dice[BattleChar_Index].MaxRoll)
@@ -573,6 +584,8 @@ public partial class BattleSceneManager : Node2D
 			}
 			PlayerTeam[Index].DrawCard(5);
 			EnemyTeam[Index].DrawCard(5);
+			
+			PlayerTeam[Index].CardsUsedEncounter = 0;
 		}
 		StartTurn();
 		TriggerPhaseConditionals("ENCOUNTERSTART");
@@ -758,7 +771,7 @@ public partial class BattleSceneManager : Node2D
 	private void Targeting_Proselyte()
 	{
 		int RNumCard = 0;
-		if(ProselyteTargetIndex == -1 || PlayerTeam[ProselyteTargetIndex].Health <= 0)
+		while(ProselyteTargetIndex == -1 || PlayerTeam[ProselyteTargetIndex].Health <= 0)
 		{ProselyteTargetIndex = Rand.Next(0,5);}
 		foreach(SpeedDice TargetingDice in SpeedDieList)
 		{
@@ -782,9 +795,11 @@ public partial class BattleSceneManager : Node2D
 	//Turn play stuff
 	private void PlayTurn() //Begins the process of acting out the established clashes
 	{
-		if(!CardBeingSet)
+		if(!CardBeingSet && !ProceedToNextEncounter)
 		{
 			GetChild(10).GetChild(1).GetChild<AudioStreamPlayer>(1).Play();
+			
+			GetChild<Node2D>(8).Hide();
 			
 			SpeedDieList = SortSpeedDieList(SpeedDieList);
 			DisableInputs(); 
@@ -935,9 +950,13 @@ public partial class BattleSceneManager : Node2D
 			//Passives
 			GetChild(8).GetChild<PassiveContainer>(3).UpdatePassives(InfoTarget.CharCard.PassiveList);
 			
-			//Emotion Level
+			//Numbers stuff
 			GetChild(8).GetChild(4).GetChild(0).GetChild<Label>(1).Text = Convert.ToString(InfoTarget.EmotionLevel);
 			GetChild(8).GetChild(4).GetChild(1).GetChild<Label>(1).Text = Convert.ToString(InfoTarget.EmotionPoints);
+			GetChild(8).GetChild(4).GetChild(2).GetChild<Label>(1).Text = Convert.ToString(InfoTarget.CardsUsedBattle);
+			GetChild(8).GetChild(4).GetChild(3).GetChild<Label>(1).Text = Convert.ToString(InfoTarget.CardsUsedEncounter);
+			GetChild(8).GetChild(4).GetChild(4).GetChild<Label>(1).Text = Convert.ToString(InfoTarget.UniqueCardsUsed.Count);
+			GetChild(8).GetChild(4).GetChild(5).GetChild<Label>(1).Text = Convert.ToString(InfoTarget.Singleton);
 		}
 	}
 	
@@ -1063,6 +1082,10 @@ public partial class BattleSceneManager : Node2D
 				case "Hand": ValueA = TargetChar.Hand.Count; break;
 				case "SpeedDie": ValueA = TargetChar.SpeedDieCount; break;
 				case "EmotionLvl": ValueA = TargetChar.EmotionLevel; break;
+				case "BattleUsedCards": ValueA = TargetChar.CardsUsedBattle; break;
+				case "EncounterUsedCards": ValueA = TargetChar.CardsUsedEncounter; break;
+				case "UniqueUsedCards": ValueA = TargetChar.UniqueCardsUsed.Count; break;
+				case "Singleton": return TargetChar.Singleton;
 				case "DiceType":
 					if(OwnerDice != null) {if(BattleChar_Index<OwnerDice.SlotCard.Dice.Count) {ValueA = OwnerDice.SlotCard.Dice[BattleChar_Index].DiceType;}}
 					break;
@@ -1087,6 +1110,9 @@ public partial class BattleSceneManager : Node2D
 				case "Hand": ValueB = TargetChar.Hand.Count; break;
 				case "SpeedDie": ValueB = TargetChar.SpeedDieCount; break;
 				case "EmotionLvl": ValueB = TargetChar.EmotionLevel; break;
+				case "BattleUsedCards": ValueB = TargetChar.CardsUsedBattle; break;
+				case "EncounterUsedCards": ValueB = TargetChar.CardsUsedEncounter; break;
+				case "UniqueUsedCards": ValueB = TargetChar.UniqueCardsUsed.Count; break;
 				default:
 					try{ValueB = Convert.ToInt32(Condition[3]);}
 					catch{}
@@ -1378,9 +1404,11 @@ public partial class BattleSceneManager : Node2D
 				if(SettingDice.SlotCard != null)
 				{
 					SettingDice.GetParent().GetParent().GetParent<Character>().Hand.Add(SettingDice.SlotCard);
+					SettingDice.GetParent().GetParent().GetParent<Character>().Stamina += SettingDice.SlotCard.StaminaCost;
 				}
 				SettingDice.SlotCard = SettingDice.GetParent().GetParent().GetParent<Character>().Hand[Index];
 				SettingDice.GetParent().GetParent().GetParent<Character>().Hand.RemoveAt(Index);
+				SettingDice.GetParent().GetParent().GetParent<Character>().Stamina -= SettingDice.SlotCard.StaminaCost;
 				RefreshCardSelectionMenu();
 			}
 		}

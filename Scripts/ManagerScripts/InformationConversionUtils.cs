@@ -22,6 +22,9 @@ public static class InformationConversionUtils
 			case "CLASHWIN": ConditionalText += "On Clash Win: "; break;
 			case "CLASHDRAW": ConditionalText += "On Clash Draw: "; break;
 			case "EMOTIONLVLCHANGE": ConditionalText += "When Emotion Level Increases: "; break;
+			case "ONCARDUSE": ConditionalText += "When Using a Card: "; break;
+			case "ONALLYDEATH": ConditionalText += "On Ally Death: "; break;
+			case "ONENEMYDEATH": ConditionalText += "On Enemy Death: "; break;
 			default: return "";
 		}
 		ConditionalText += "If ";
@@ -42,8 +45,12 @@ public static class InformationConversionUtils
 				case "MaxStaggerHealth": ConditionalText+= "max stagger "; break;
 				case "MaxStamina": ConditionalText+= "max stamina "; break;
 				case "Hand": ConditionalText+= "hand size "; break;
-				case "SpeedDie": ConditionalText += "speed die count"; break;
-				case "EmotionLvl": ConditionalText += "emotion level"; break;
+				case "SpeedDie": ConditionalText += "speed die count "; break;
+				case "EmotionLvl": ConditionalText += "emotion level "; break;
+				case "BattleUsedCards":  ConditionalText += "cards used in battle "; break;
+				case "EncounterUsedCards":  ConditionalText += "cards used in encounter "; break;
+				case "UniqueUsedCards":  ConditionalText += "unique cards used "; break;
+				case "Singleton": ConditionalText += "is singleton "; break;
 				case "DiceType": ConditionalText += "dice type "; break;
 				default:
 					if(Condition[2].Length>6 && Condition[2].Substring(0, 7) == "Status.")
@@ -51,25 +58,31 @@ public static class InformationConversionUtils
 					break;
 			}
 		}
-		switch(Condition[2])
+		if(Condition[1] != "Singleton")
 		{
-			case "Eq": ConditionalText += "= "; break;
-			case "Lt": ConditionalText += "< "; break;
-			case "Gt": ConditionalText += "> "; break;
-			case "Neq": ConditionalText += "≠ "; break;
-		}
-		switch(Condition[3])
-		{
-			case "Health": ConditionalText += "health "; break;
-			case "StaggerHealth": ConditionalText += "stagger "; break;
-			case "Stamina": ConditionalText += "stamina "; break;
-			case "MaxHealth": ConditionalText+= "max health "; break;
-			case "MaxStaggerHealth": ConditionalText+= "max stagger "; break;
-			case "MaxStamina": ConditionalText+= "max stamina "; break;
-			case "Hand": ConditionalText+= "hand size "; break;
-			case "SpeedDie": ConditionalText += "speed die count"; break;
-			case "EmotionLvl": ConditionalText += "emotion level"; break;
-			default: ConditionalText += Condition[3]; break;
+			switch(Condition[2])
+			{
+				case "Eq": ConditionalText += "= "; break;
+				case "Lt": ConditionalText += "< "; break;
+				case "Gt": ConditionalText += "> "; break;
+				case "Neq": ConditionalText += "≠ "; break;
+			}
+			switch(Condition[3])
+			{
+				case "Health": ConditionalText += "health "; break;
+				case "StaggerHealth": ConditionalText += "stagger "; break;
+				case "Stamina": ConditionalText += "stamina "; break;
+				case "MaxHealth": ConditionalText+= "max health "; break;
+				case "MaxStaggerHealth": ConditionalText+= "max stagger "; break;
+				case "MaxStamina": ConditionalText+= "max stamina "; break;
+				case "Hand": ConditionalText+= "hand size "; break;
+				case "SpeedDie": ConditionalText += "speed die count "; break;
+				case "EmotionLvl": ConditionalText += "emotion level "; break;
+				case "BattleUsedCards":  ConditionalText += "cards used in battle "; break;
+				case "EncounterUsedCards":  ConditionalText += "cards used in encounter "; break;
+				case "UniqueUsedCards":  ConditionalText += "unique cards used "; break;
+				default: ConditionalText += Condition[3]; break;
+			}
 		}
 		ConditionalText += ": ";
 		
@@ -108,6 +121,11 @@ public static class InformationConversionUtils
 				
 				ConditionalText += ") cards.";
 			}
+			else if(Effect[1] == "ResetUniqueCardTracker") //Effect is reset unique cards used
+			{
+				if(Effect[0] == "Target") {ConditionalText += "Reset targets unique card tracker.";}
+				else {ConditionalText += "Reset unique card tracker.";}
+			}
 			else //Effect involves a character stat or status effect
 			{
 				switch(Effect[2])
@@ -130,8 +148,10 @@ public static class InformationConversionUtils
 					case "MaxHealth": ConditionalText += "max health "; break;
 					case "MaxStaggerHealth": ConditionalText += "max stagger "; break;
 					case "MaxStamina": ConditionalText += "max stamina "; break;
-					case "SpeedDie": ConditionalText += "speed die count"; break;
-					case "EmotionPoints": ConditionalText += "emotion points"; break;
+					case "SpeedDie": ConditionalText += "speed die count "; break;
+					case "EmotionPoints": ConditionalText += "emotion points "; break;
+					case "BattleUsedCards":  ConditionalText += "cards used in battle tracker "; break;
+					case "EncounterUsedCards":  ConditionalText += "cards used in encounter tracker "; break;
 					default:
 						if(Effect[1].Length>6 && Effect[1].Substring(0, 7) == "Status.")
 						{ConditionalText += Effect[1].Substring(7)+" ";}

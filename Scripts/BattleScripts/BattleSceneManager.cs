@@ -206,7 +206,7 @@ public partial class BattleSceneManager : Node2D
 			}
 		}
 		
-		//BattleChar Process   UNFINISHED
+		//BattleChar Process
 		else if(BattleChar_Active)
 		{
 			if(BattleChar_SleepTime <= 0)
@@ -369,16 +369,13 @@ public partial class BattleSceneManager : Node2D
 								BattleChar_Defender.GetChild(5).GetChild(1).GetChild<ProgressBar>(1).Value = (float)BattleChar_Defender.StaggerHealth/(float)BattleChar_Defender.MaxStaggerHealth;
 							}
 							//Conditionals
-							BattleChar_Attacker.TriggerPassivesAndStatuses("CLASHLOSE", BattleChar_Attacker_Dice);
 							if(BattleChar_Attacker_Dice.SlotCard.Dice[BattleChar_Index].ConditionalTrigger == "CLASHLOSE")
 							{TriggerConditional(BattleChar_Attacker_Dice.SlotCard.Dice[BattleChar_Index], BattleChar_Attacker, BattleChar_Attacker_Dice);}
-							BattleChar_Defender.TriggerPassivesAndStatuses("CLASHWIN", BattleChar_Defender_Dice);
 							if(BattleChar_Defender_Dice.SlotCard.Dice[BattleChar_Index].ConditionalTrigger == "CLASHWIN" || (BattleChar_Defender_Dice.SlotCard.Dice[BattleChar_Index].ConditionalTrigger == "ONHIT" && BattleChar_DamageDealt > 0))
 							{TriggerConditional(BattleChar_Defender_Dice.SlotCard.Dice[BattleChar_Index], BattleChar_Defender, BattleChar_Defender_Dice);}
-							if(BattleChar_DamageDealt > 0)
-							{BattleChar_Attacker.TriggerPassivesAndStatuses("ONDAMAGED", BattleChar_Attacker_Dice);}
-							BattleChar_Attacker.TriggerPassivesAndStatuses("CLASHLOSE");
-							BattleChar_Defender.TriggerPassivesAndStatuses("CLASHWIN");
+							if(BattleChar_DamageDealt > 0) {BattleChar_Attacker.TriggerPassivesAndStatuses("ONDAMAGED", BattleChar_Attacker_Dice);}
+							BattleChar_Attacker.TriggerPassivesAndStatuses("CLASHLOSE", BattleChar_Attacker_Dice);
+							BattleChar_Defender.TriggerPassivesAndStatuses("CLASHWIN", BattleChar_Defender_Dice);
 						}
 						else if(BattleChar_Defender_Dice.Value < BattleChar_Attacker_Dice.Value) //Attacker wins clash
 						{
@@ -398,16 +395,13 @@ public partial class BattleSceneManager : Node2D
 								BattleChar_Attacker.GetChild(5).GetChild(1).GetChild<ProgressBar>(1).Value = (float)BattleChar_Attacker.StaggerHealth/(float)BattleChar_Attacker.MaxStaggerHealth;
 							}
 							//Conditionals
-							BattleChar_Attacker.TriggerPassivesAndStatuses("CLASHWIN", BattleChar_Attacker_Dice);
 							if(BattleChar_Attacker_Dice.SlotCard.Dice[BattleChar_Index].ConditionalTrigger == "CLASHWIN" || (BattleChar_Attacker_Dice.SlotCard.Dice[BattleChar_Index].ConditionalTrigger == "ONHIT" && BattleChar_DamageDealt > 0))
 							{TriggerConditional(BattleChar_Attacker_Dice.SlotCard.Dice[BattleChar_Index], BattleChar_Attacker, BattleChar_Attacker_Dice);}
-							BattleChar_Defender.TriggerPassivesAndStatuses("CLASHLOSE", BattleChar_Defender_Dice);
 							if(BattleChar_Defender_Dice.SlotCard.Dice[BattleChar_Index].ConditionalTrigger == "CLASHLOSE")
 							{TriggerConditional(BattleChar_Defender_Dice.SlotCard.Dice[BattleChar_Index], BattleChar_Defender, BattleChar_Defender_Dice);}
-							if(BattleChar_DamageDealt > 0)
-							{BattleChar_Defender.TriggerPassivesAndStatuses("ONDAMAGED", BattleChar_Defender_Dice);}
-							BattleChar_Attacker.TriggerPassivesAndStatuses("CLASHWIN");
-							BattleChar_Defender.TriggerPassivesAndStatuses("CLASHLOSE");
+							if(BattleChar_DamageDealt > 0) {BattleChar_Defender.TriggerPassivesAndStatuses("ONDAMAGED", BattleChar_Defender_Dice);}
+							BattleChar_Attacker.TriggerPassivesAndStatuses("CLASHWIN", BattleChar_Attacker_Dice);
+							BattleChar_Defender.TriggerPassivesAndStatuses("CLASHLOSE", BattleChar_Defender_Dice);
 						}
 						else //Draw
 						{

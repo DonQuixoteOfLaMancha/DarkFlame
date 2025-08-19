@@ -9,4 +9,24 @@
 		<Description> : #At turn end, reduce health by count and lower count.#
 		<AutoDecrement> : #False#
 	@-STATUSEFFECT-@
+	@STATUSEFFECT@
+		<Name> : #Strength#
+		<Identifier> : #strength#
+		<ImageSource> : #user://Content/DefaultContent/Images/StatusEffectIcons/StrengthIcon.png#
+		<Trigger> : #ONROLL#
+		<Condition> : #[User,DiceType,Lt,3]#
+		<EffectList> : #[[Roll,Value,Inc,Status.strength]]#
+		<Description> : #Offensive dice gain +X power.#
+		<AutoDecrement> : #True#
+	@-STATUSEFFECT-@
+	@STATUSEFFECT@
+		<Name> : #Endurance#
+		<Identifier> : #endurance#
+		<ImageSource> : #user://Content/DefaultContent/Images/StatusEffectIcons/EnduranceIcon.png#
+		<Trigger> : #ONROLL#
+		<Condition> : #[User,DiceType,Gt,2]#
+		<EffectList> : #[[Roll,Value,Inc,Status.endurance]]#
+		<Description> : #Defensive dice gain +X power.#
+		<AutoDecrement> : #True#
+	@-STATUSEFFECT-@
 ==-STATUSEFFECT-==

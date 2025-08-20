@@ -545,7 +545,6 @@ public partial class BattleSceneManager : Node2D
 
 		EncounterIndex = 0;
 		InitiateEncounter();
-		TriggerPhaseConditionals("BATTLESTART");
 	}
 	
 	private void InitiateEncounter()
@@ -581,13 +580,16 @@ public partial class BattleSceneManager : Node2D
 			
 			PlayerTeam[Index].CardsUsedEncounter = 0;
 		}
-		StartTurn();
+		if(EncounterIndex == 0) {TriggerPhaseConditionals("BATTLESTART");};
 		TriggerPhaseConditionals("ENCOUNTERSTART");
+		StartTurn();
 	}
 	
 	private void StartTurn()
 	{
 		SpeedDieList.Clear();
+		
+		TriggerPhaseConditionals("TURNSTART");
 		
 		bool EnemyTeamDead = true;
 		bool PlayerTeamDead = true;
@@ -675,7 +677,6 @@ public partial class BattleSceneManager : Node2D
 			else {PlayerTeam[Index].Hide();}
 		}
 		SetEnemyTargets();
-		TriggerPhaseConditionals("TURNSTART");
 	}
 	
 	private void ExitBattle()
@@ -1084,7 +1085,7 @@ public partial class BattleSceneManager : Node2D
 					if(OwnerDice != null) {if(BattleChar_Index<OwnerDice.SlotCard.Dice.Count) {ValueA = OwnerDice.SlotCard.Dice[BattleChar_Index].DiceType;}}
 					break;
 				default:
-					if(Condition.Length>6 && Condition[1].Substring(0, 7) == "Status.")
+					if(Condition[1].Length>6 && Condition[1].Substring(0, 7) == "Status.")
 					{
 						if(TargetChar.StatusEffects.FindIndex(x => x.Identifier.Equals(Condition[1].Substring(7))) != -1)
 						{ValueA = TargetChar.StatusEffects[TargetChar.StatusEffects.FindIndex(x => x.Identifier.Equals(Condition[1].Substring(7)))].Count;}
@@ -1142,13 +1143,20 @@ public partial class BattleSceneManager : Node2D
 		switch(Effect[0])
 		{
 			case "Roll":
-				if(OwnerDice != null) {TargetDice = OwnerDice; CharTargeted = true;}
+				if(OwnerDice != null) {TargetDice = OwnerDice;}
+				else {return;}
 				break;
 			case "User":
 				TargetChar = Owner;
+				CharTargeted = true;
 				break;
 			case "Target":
 				if(OwnerDice != null) {TargetChar = OwnerDice.Target; CharTargeted = true;}
+				else if(BattleChar_Attacker != null && BattleChar_Defender != null)
+				{
+					if(Owner == BattleChar_Attacker) {TargetChar = BattleChar_Defender; CharTargeted = true;}
+					else if (Owner == BattleChar_Defender) {TargetChar = BattleChar_Attacker; CharTargeted = true;}
+				}
 				break;
 			default:
 				return;
@@ -1178,7 +1186,7 @@ public partial class BattleSceneManager : Node2D
 			}
 		
 		if(CharTargeted)
-		{	
+		{
 			switch(Effect[1])
 			{
 				case "Health":
@@ -1284,7 +1292,7 @@ public partial class BattleSceneManager : Node2D
 	{
 		if(GetChild(4).GetChild(Team).GetChild<Character>(Index).Health > 0)
 		{
-			if(CardBeingSet && SettingDice != null)
+			if(CardBeingSet && SettingDice != null && !GetChild<Node2D>(7).Visible)
 			{
 				if(GetChild(4).GetChild(Team).GetChild<Character>(Index) != SettingDice.GetParent().GetParent().GetParent<Character>() && SettingDice.SlotCard != null)
 				{
@@ -1323,7 +1331,7 @@ public partial class BattleSceneManager : Node2D
 				RefreshCardSelectionMenu();
 			}
 		}
-		else if(SettingDice != null)
+		else if(SettingDice != null && !GetChild<Node2D>(7).Visible)
 		{
 			if(SettingDice.GetParent() != TargetDice.GetParent())
 			{
@@ -1421,7 +1429,7 @@ public partial class BattleSceneManager : Node2D
 	private void _CardSelection_Cancel()
 	{
 		if(SettingDice.Target != null) {SettingDice.Clear();}
-		else {SettingDice.GetParent().GetParent().GetParent<Character>().Hand.Add(SettingDice.SlotCard); SettingDice.SlotCard = null; }
+		else {SettingDice.GetParent().GetParent().GetParent<Character>().Hand.Add(SettingDice.SlotCard); SettingDice.GetParent().GetParent().GetParent<Character>().Stamina += SettingDice.SlotCard.StaminaCost; SettingDice.SlotCard = null; }
 		CardBeingSet = false;
 		SettingDice = null;
 		GetChild<Node2D>(7).Hide();

@@ -5,8 +5,18 @@
 		<ImageSource> : #user://Content/DefaultContent/Images/StatusEffectIcons/BurnIcon.png#
 		<Trigger> : #COMBATEND#
 		<Condition> : #[User,Health,Gt,0]#
-		<EffectList> : #[[User,Health,Dec,Status.burn],[User,Status.burn,Div,3]]#
+		<EffectList> : #[[User,Health,Dec,Status.burn],[User,Status.burn,Mlt,0.66]]#
 		<Description> : #At turn end, reduce health by count and lower count.#
+		<AutoDecrement> : #False#
+	@-STATUSEFFECT-@
+	@STATUSEFFECT@
+		<Name> : #Bleed#
+		<Identifier> : #bleed#
+		<ImageSource> : #user://Content/DefaultContent/Images/StatusEffectIcons/BleedIcon.png#
+		<Trigger> : #ONROLL#
+		<Condition> : #[User,DiceType,Lt,3]#
+		<EffectList> : #[[User,Health,Dec,Status.bleed],[User,Status.bleed,Mlt,0.66]]#
+		<Description> : #On offensive dice roll, reduce health by count and lower count.#
 		<AutoDecrement> : #False#
 	@-STATUSEFFECT-@
 	@STATUSEFFECT@
@@ -27,6 +37,26 @@
 		<Condition> : #[User,DiceType,Gt,2]#
 		<EffectList> : #[[Roll,Value,Inc,Status.endurance]]#
 		<Description> : #Defensive dice gain +X power.#
+		<AutoDecrement> : #True#
+	@-STATUSEFFECT-@
+	@STATUSEFFECT@
+		<Name> : #Feeble#
+		<Identifier> : #feeble#
+		<ImageSource> : #user://Content/DefaultContent/Images/StatusEffectIcons/FeebleIcon.png#
+		<Trigger> : #ONROLL#
+		<Condition> : #[User,DiceType,Lt,3]#
+		<EffectList> : #[[Roll,Value,Dec,Status.feeble]]#
+		<Description> : #Offensive dice lose -X power.#
+		<AutoDecrement> : #True#
+	@-STATUSEFFECT-@
+	@STATUSEFFECT@
+		<Name> : #Disarm#
+		<Identifier> : #disarm#
+		<ImageSource> : #user://Content/DefaultContent/Images/StatusEffectIcons/DisarmIcon.png#
+		<Trigger> : #ONROLL#
+		<Condition> : #[User,DiceType,Gt,2]#
+		<EffectList> : #[[Roll,Value,Dec,Status.disarm]]#
+		<Description> : #Defensive dice lose -X power.#
 		<AutoDecrement> : #True#
 	@-STATUSEFFECT-@
 ==-STATUSEFFECT-==

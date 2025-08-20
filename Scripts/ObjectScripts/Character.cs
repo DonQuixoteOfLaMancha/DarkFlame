@@ -483,7 +483,7 @@ public partial class Character : Node2D
 					if(OwnerDice != null) {if(GetParent().GetParent().GetParent<BattleSceneManager>().BattleChar_Index<OwnerDice.SlotCard.Dice.Count) {ValueA = OwnerDice.SlotCard.Dice[GetParent().GetParent().GetParent<BattleSceneManager>().BattleChar_Index].DiceType;}}
 					break;
 				default:
-					if(Condition.Length>6 && Condition[1].Substring(0, 7) == "Status.")
+					if(Condition[1].Length>6 && Condition[1].Substring(0, 7) == "Status.")
 					{
 						if(TargetChar.StatusEffects.FindIndex(x => x.Identifier.Equals(Condition[1].Substring(7))) != -1)
 						{ValueA = TargetChar.StatusEffects[TargetChar.StatusEffects.FindIndex(x => x.Identifier.Equals(Condition[1].Substring(7)))].Count;}
@@ -541,12 +541,14 @@ public partial class Character : Node2D
 		{
 			case "Roll":
 				if(OwnerDice != null) {TargetDice = OwnerDice;}
+				else {return;}
 				break;
 			case "User":
 				TargetChar = this; CharTargeted = true;
 				break;
 			case "Target":
 				if(OwnerDice != null) {TargetChar = OwnerDice.Target; CharTargeted = true;}
+				else {return;}
 				break;
 			default:
 				return;
@@ -669,7 +671,9 @@ public partial class Character : Node2D
 					if(Effect[2] == "Div") {TargetChar.CardsUsedEncounter = Convert.ToInt32((float)TargetChar.CardsUsedEncounter/ValueB);}
 					break;
 				case "Draw":
+					GD.Print(TargetChar.Hand.Count);
 					TargetChar.DrawCard(Convert.ToInt32(ValueB));
+					GD.Print(TargetChar.Hand.Count);
 					break;
 				case "Discard":
 					while(TargetChar.Hand.Count > 0 && ValueB > 0)

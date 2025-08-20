@@ -143,9 +143,9 @@ public partial class GameManager : Node2D
 	
 	public void SwitchScene(bool MenuOrBattle) //true is Menu, false is Battle
 	{
-		GetChild<Node2D>(2).Show();
 		if(MenuOrBattle != CurrentScene)
 		{
+			GetChild<Node2D>(2).Show();
 			CurrentScene = MenuOrBattle;
 			SceneChangeTicker = 4;
 		}

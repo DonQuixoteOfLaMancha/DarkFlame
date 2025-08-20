@@ -53,10 +53,8 @@ public partial class SpeedDice : Node2D
 	//CIF
 	public void AssignTarget(Character InputChar, CombatCard InputCard)
 	{
-		if(SlotCard != null) {GetParent().GetParent().GetParent<Character>().Stamina += SlotCard.StaminaCost;}
 		Target = InputChar;
 		SlotCard = InputCard;
-		GetParent().GetParent().GetParent<Character>().Stamina -= SlotCard.StaminaCost;
 		GetChild<CombatCard>(4).CopyCombatCard(SlotCard);
 		GetChild<CombatCard>(4).Refresh();
 	}

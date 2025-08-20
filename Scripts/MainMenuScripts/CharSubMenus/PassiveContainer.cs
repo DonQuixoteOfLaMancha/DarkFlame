@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public partial class PassiveContainer : Node2D
 {
-	bool NewPassive = false;
+	int NewPassive = 0;
 	List<Passive> Passives = new List<Passive>();
 	
 	// Called when the node enters the scene tree for the first time.
@@ -14,7 +14,8 @@ public partial class PassiveContainer : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if(NewPassive)
+		if(NewPassive == 2 || NewPassive == 3) {NewPassive--;}
+		if(NewPassive == 1)
 		{
 			for(int Index = 0; Index<Passives.Count; Index++)
 			{
@@ -22,13 +23,14 @@ public partial class PassiveContainer : Node2D
 				TargetPassive.Trigger = Passives[Index].Trigger;
 				TargetPassive.Condition = Passives[Index].Condition;
 				TargetPassive.Effect = Passives[Index].Effect;
+				TargetPassive.DescOverride = Passives[Index].DescOverride;
 				TargetPassive.Refresh();
 				TargetPassive.Position = new Vector2(0,60*Index);
 			}
-			GetChild<VScrollBar>(0).MaxValue = 60*(GetChildCount()-5);
+			GetChild<VScrollBar>(0).MaxValue = 60*(GetChildCount()-4);
 			GetChild<VScrollBar>(0).Page = 60;
 			GetChild<VScrollBar>(0).Value = 0;
-			NewPassive = false;
+			NewPassive = 0;
 		}
 	}
 	
@@ -37,13 +39,13 @@ public partial class PassiveContainer : Node2D
 	{
 		Passives = PassivesList;
 		for(int Index = 1; Index<GetChildCount(); Index++) {GetChild(Index).QueueFree();}
+		var PassiveScene = GD.Load<PackedScene>("res://Scenes/ObjectScenes/Passive.tscn");
 		for(int Index = 0; Index<PassivesList.Count; Index++)
 		{
-			var PassiveScene = GD.Load<PackedScene>("res://Scenes/ObjectScenes/Passive.tscn");
 			var PassiveInstance = PassiveScene.Instantiate();
 			AddChild(PassiveInstance);
 		}
-		NewPassive = true;
+		NewPassive = 3;
 	}
 	
 	//Connection Inputs

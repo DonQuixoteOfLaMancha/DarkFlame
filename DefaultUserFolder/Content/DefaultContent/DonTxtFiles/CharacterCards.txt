@@ -20,26 +20,6 @@
 		<Passives> : # #
 	@-CHARACTERCARD-@
 	@CHARACTERCARD@
-		<Name> : #Rampaging Black Silence#
-		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/BlackSilence.png#
-		<BackHairOrigins> : #[[8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009]]#
-		<EyeOrigins> : #[[8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009]]#
-		<MouthOrigins> : #[[8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009]]#
-		<FrontHairOrigins> : #[[8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009][8009,8009]]#
-		<Health> : #106#
-		<StaggerHealth> : #56#
-		<SlashRes> : #1#
-		<PierceRes> : #1#
-		<BluntRes> : #0.5#
-		<SlashStagRes> : #1#
-		<PierceStagRes> : #1#
-		<BluntStagRes> : #0.5#
-		<MinSpeed> : #2#
-		<MaxSpeed> : #7#
-		<StrengthGrade> : #5#
-		<Passives> : # #
-	@-CHARACTERCARD-@
-	@CHARACTERCARD@
 		<Name> : #Instant Death#
 		<SpriteSheetSource> : #user://Content/DefaultContent/Images/CharacterCardSprites/Grade9Fixer.png#
 		<BackHairOrigins> : #[[0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0][0,0]]#

@@ -21,7 +21,7 @@ public partial class Passive : Node2D
 	//CIF
 	public void Refresh()
 	{
-		if(!(DescOverride == "" || DescOverride == " ")) {GetChild<Label>(2).Text = InformationConversionUtils.ConditionalToText(Trigger, Condition, Effect);}
+		if(DescOverride == "" || DescOverride == " " || DescOverride == null) {GetChild<Label>(2).Text = InformationConversionUtils.ConditionalToText(Trigger, Condition, Effect);}
 		else {GetChild<Label>(2).Text = DescOverride;}
 	}
 	
@@ -52,7 +52,7 @@ public partial class Passive : Node2D
 				case "Trigger": Trigger = PropertiesData[Index,1]; break;
 				case "Condition": Condition = StringToArray(PropertiesData[Index,1]); break;
 				case "Effect": Effect = StringToArray(PropertiesData[Index,1]); break;
-				case "DescOverride": DescOverride = PropertiesData[Index, 1]; break;
+				case "DescOverride": DescOverride = PropertiesData[Index,1]; break;
 			}
 		}
 	}

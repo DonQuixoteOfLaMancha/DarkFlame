@@ -661,7 +661,7 @@ public partial class BattleSceneManager : Node2D
 					PlayerTeam[Index].StaggerHealth = PlayerTeam[Index].MaxStaggerHealth;
 					PlayerTeam[Index].GetChild(5).GetChild(1).GetChild<ProgressBar>(1).Value = 1;
 				}
-				if(!EnemyTeam[Index].Staggered)
+				if(!PlayerTeam[Index].Staggered)
 				{
 					if(PlayerTeam[Index].StaggerHealth > 0)
 					{

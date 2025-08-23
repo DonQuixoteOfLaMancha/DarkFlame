@@ -1429,7 +1429,7 @@ public partial class BattleSceneManager : Node2D
 	private void _CardSelection_Cancel()
 	{
 		if(SettingDice.Target != null) {SettingDice.Clear();}
-		else {SettingDice.GetParent().GetParent().GetParent<Character>().Hand.Add(SettingDice.SlotCard); SettingDice.GetParent().GetParent().GetParent<Character>().Stamina += SettingDice.SlotCard.StaminaCost; SettingDice.SlotCard = null; }
+		else if(SettingDice.Slotcard != null) {SettingDice.GetParent().GetParent().GetParent<Character>().Hand.Add(SettingDice.SlotCard); SettingDice.GetParent().GetParent().GetParent<Character>().Stamina += SettingDice.SlotCard.StaminaCost; SettingDice.SlotCard = null; }
 		CardBeingSet = false;
 		SettingDice = null;
 		GetChild<Node2D>(7).Hide();

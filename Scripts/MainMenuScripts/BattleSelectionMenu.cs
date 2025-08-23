@@ -77,11 +77,11 @@ public partial class BattleSelectionMenu : Node2D
 						Leaf.GetChild<Label>(7).Show();
 						break;
 				}
-				if(FilteredBattleList[Offset+Index].DiffGrade >= 0 && FilteredBattleList[Offset+Index].DiffGrade < 5)
+				if(FilteredBattleList[Offset+Index].DiffGrade > 0 && FilteredBattleList[Offset+Index].DiffGrade < 6)
 				{
-					Leaf.GetChild<Sprite2D>(5).Texture = GetTree().GetRoot().GetChild<GameManager>(0).DiffGradeTextures[FilteredBattleList[Offset+Index].DiffGrade];
-					if(GetTree().GetRoot().GetChild<GameManager>(0).DiffGradeTextures[FilteredBattleList[Offset+Index].DiffGrade] != null)
-					{Leaf.GetChild<Sprite2D>(5).Scale = new Vector2((float)50/GetTree().GetRoot().GetChild<GameManager>(0).DiffGradeTextures[FilteredBattleList[Offset+Index].DiffGrade].GetWidth(), (float)30/GetTree().GetRoot().GetChild<GameManager>(0).DiffGradeTextures[FilteredBattleList[Offset+Index].DiffGrade].GetHeight());}
+					Leaf.GetChild<Sprite2D>(5).Texture = GetTree().GetRoot().GetChild<GameManager>(0).DiffGradeTextures[FilteredBattleList[Offset+Index].DiffGrade-1];
+					if(GetTree().GetRoot().GetChild<GameManager>(0).DiffGradeTextures[FilteredBattleList[Offset+Index].DiffGrade-1] != null)
+					{Leaf.GetChild<Sprite2D>(5).Scale = new Vector2((float)50/GetTree().GetRoot().GetChild<GameManager>(0).DiffGradeTextures[FilteredBattleList[Offset+Index].DiffGrade-1].GetWidth(), (float)30/GetTree().GetRoot().GetChild<GameManager>(0).DiffGradeTextures[FilteredBattleList[Offset+Index].DiffGrade-1].GetHeight());}
 				}
 				
 				Texture2D IconTexture = FilteredBattleList[Offset+Index].Icon;

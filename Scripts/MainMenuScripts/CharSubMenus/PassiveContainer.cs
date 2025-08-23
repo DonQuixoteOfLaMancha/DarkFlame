@@ -27,7 +27,7 @@ public partial class PassiveContainer : Node2D
 				TargetPassive.Refresh();
 				TargetPassive.Position = new Vector2(0,60*Index);
 			}
-			GetChild<VScrollBar>(0).MaxValue = 60*(GetChildCount()-4);
+			GetChild<VScrollBar>(0).MaxValue = 60*(GetChildCount()-3);
 			GetChild<VScrollBar>(0).Page = 60;
 			GetChild<VScrollBar>(0).Value = 0;
 			NewPassive = 0;

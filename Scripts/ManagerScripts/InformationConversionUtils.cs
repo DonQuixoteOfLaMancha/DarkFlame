@@ -53,8 +53,8 @@ public static class InformationConversionUtils
 				case "Singleton": ConditionalText += "is singleton "; break;
 				case "DiceType": ConditionalText += "dice type "; break;
 				default:
-					if(Condition[2].Length>6 && Condition[2].Substring(0, 7) == "Status.")
-					{ConditionalText += Condition[2].Substring(7)+" ";}
+					if(Condition[1].Length>6 && Condition[1].Substring(0, 7) == "Status.")
+					{ConditionalText += Condition[1].Substring(7)+" ";}
 					break;
 			}
 		}

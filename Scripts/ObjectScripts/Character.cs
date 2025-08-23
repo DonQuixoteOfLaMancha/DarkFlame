@@ -671,9 +671,7 @@ public partial class Character : Node2D
 					if(Effect[2] == "Div") {TargetChar.CardsUsedEncounter = Convert.ToInt32((float)TargetChar.CardsUsedEncounter/ValueB);}
 					break;
 				case "Draw":
-					GD.Print(TargetChar.Hand.Count);
 					TargetChar.DrawCard(Convert.ToInt32(ValueB));
-					GD.Print(TargetChar.Hand.Count);
 					break;
 				case "Discard":
 					while(TargetChar.Hand.Count > 0 && ValueB > 0)
@@ -769,7 +767,7 @@ public partial class Character : Node2D
 				break;
 			case 8: //True NORMAL Percentage (Pale)
 				AmountDealt = (MaxHealth*Amount)/100;
-				Health -= Amount;
+				Health -= AmountDealt;
 				break;
 		}
 		if(Health <= 0) {Death();}

@@ -12,6 +12,9 @@ public partial class BattleSceneManager : Node2D
 	Character[] EnemyTeam;
 	List<SpeedDice> SpeedDieList = new List<SpeedDice>();
 	
+	Dictionary<int, Vector2> EnemyPositions = new Dictionary<int, Vector2>() {{0, new Vector2(346, 406)}, {1, new Vector2(48, 231)}, {2, new Vector2(663, 231)}, {3, new Vector2(48, 581)}, {4, new Vector2(663, 581)}};
+	Dictionary<int, Vector2> PlayerPositions = new Dictionary<int, Vector2>() {{0, new Vector2(1306, 406)}, {1, new Vector2(1604, 231)}, {2, new Vector2(1008, 231)}, {3, new Vector2(1604, 581)}, {4, new Vector2(1008, 581)}};
+	
 	List<BaseButton> InputNodeList; //To make disabling and re-enabling inputs easier
 	
 	int ProselyteTargetIndex = -1; //Character index used for a specific targeting type
@@ -612,8 +615,6 @@ public partial class BattleSceneManager : Node2D
 		
 		
 		EnableInputs();
-		Vector2[] EnemyPositions = new Vector2[5] {new Vector2(346, 406), new Vector2(48, 231), new Vector2(663, 231), new Vector2(48, 581), new Vector2(663, 581)};
-		Vector2[] PlayerPositions = new Vector2[5] {new Vector2(1306, 406), new Vector2(1604, 231), new Vector2(1008, 231), new Vector2(1604, 581), new Vector2(1008, 581)};
 		for(int Index = 0; Index<5; Index++)
 		{
 			if(EnemyTeam[Index].Health > 0)
@@ -1429,7 +1430,7 @@ public partial class BattleSceneManager : Node2D
 	private void _CardSelection_Cancel()
 	{
 		if(SettingDice.Target != null) {SettingDice.Clear();}
-		else if(SettingDice.Slotcard != null) {SettingDice.GetParent().GetParent().GetParent<Character>().Hand.Add(SettingDice.SlotCard); SettingDice.GetParent().GetParent().GetParent<Character>().Stamina += SettingDice.SlotCard.StaminaCost; SettingDice.SlotCard = null; }
+		else if(SettingDice.SlotCard != null) {SettingDice.GetParent().GetParent().GetParent<Character>().Hand.Add(SettingDice.SlotCard); SettingDice.GetParent().GetParent().GetParent<Character>().Stamina += SettingDice.SlotCard.StaminaCost; SettingDice.SlotCard = null; }
 		CardBeingSet = false;
 		SettingDice = null;
 		GetChild<Node2D>(7).Hide();

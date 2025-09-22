@@ -74,7 +74,8 @@ public partial class CombatCard : Node2D
 		Condition = InputCard.Condition;
 		Effect = InputCard.Effect;
 		ConditionalDescOverride = InputCard.ConditionalDescOverride;
-		Dice = InputCard.Dice;
+		Dice.Clear();
+		Dice.AddRange(InputCard.Dice);
 	}
 	
 	public void Refresh()

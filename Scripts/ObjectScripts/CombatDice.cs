@@ -7,8 +7,8 @@ public partial class CombatDice : Node2D
 	public int MaxRoll = 1;
 	public int DiceType = 0; //Slash, Pierce, Blunt, Block, Evade (+ special ones: Red, White, Black, and Pale)
 	public string ConditionalTrigger = "";
-	public string[] Condition = new string[4]; //EXPLAIN FORMAT 0 - __, 1 - __, 2 - __, 3 - __
-	public string[] Effect = new string[4]; //EXPLAIN FORMAT 0 - __, 1 - __, 2 - __, 3 - __
+	public string[] Condition = new string[4]; //0 - Target, 1 - Property (LHS of operator), 2 - Operator (Type of check <, =, etc.), 3 - Value (RHS of operator)
+	public string[] Effect = new string[4]; //0 - Target, 1 - Property (What's being changed), 2 - Operation (How it's being changed), 3 - Value (What to change it by)
 	public string ConditionalDescOverride = ""; //Manually written description for condition, can only be set by directly modifying the .txt file
 	
 	// Called when the node enters the scene tree for the first time.

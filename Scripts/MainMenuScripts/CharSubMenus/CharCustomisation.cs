@@ -46,8 +46,6 @@ public partial class CharCustomisation : Node2D
 		}
 	}
 	
-	//GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[GetParent<CharacterMenu>().SelectedCharacter]
-	
 	
 	// Connection Inputs
 	private void _CosmeticSpriteChange_Pressed(bool LeftRight, int Index)
@@ -90,7 +88,6 @@ public partial class CharCustomisation : Node2D
 				case 2: GetChild(1).GetChild(Index).GetChild<TextEdit>(0).Text = Convert.ToString(GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[GetParent<CharacterMenu>().SelectedCharacter].HairBlue); break;
 			}
 		}
-		UpdateCosmeticSprites();
 	}
 	private void _Name_Changed()
 	{
@@ -102,7 +99,7 @@ public partial class CharCustomisation : Node2D
 		else
 		{
 			GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[GetParent<CharacterMenu>().SelectedCharacter].Name = InputName;
-			GetParent<CharacterMenu>().UpdateSelectedChar();
+			try{DisplayChar.GetChild<Label>(5).Text = GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[SelectedCharacter].Name;} catch{}
 		}
 	}
 }

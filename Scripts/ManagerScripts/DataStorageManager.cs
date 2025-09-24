@@ -128,7 +128,7 @@ public static class DataStorageManager
 						OpenProperty = true;
 						continue;
 					}
-					if(Index<DonTxt.Length-1) {if(DonTxt.Substring(Index,2) == "@-") {Depth--; continue;}} //Prevents my shii from geekin when I have dontxt in dontxt
+					if(Index<DonTxt.Length-1) {if(DonTxt.Substring(Index,2) == "@-") {Depth--; continue;}} //Prevents issues where there is dontxt within dontxt
 					if(Index>0) {if(DonTxt.Substring(Index-1,2) == "-@") {Depth--; continue;}} //related to above
 					if(IndexChar == '@') {Depth++; continue;} //related to above
 					if(IndexChar == '#') {DataClose = Index; continue;} //Checks for the end of a piece of data

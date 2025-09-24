@@ -153,7 +153,8 @@ public partial class CharacterCardEditMenu : Node2D
 					GetChild<CharacterCard>(2).EyeOrigins[GetChild<Character>(3).SpriteState, XY] = Coordinate;
 					break;
 			}
-			UpdateCharacter();
+			GetChild<Character>(3).CharCard = GetChild<CharacterCard>(2);
+			GetChild<Character>(3).UpdateSpriteState();
 		}
 		catch
 		{}

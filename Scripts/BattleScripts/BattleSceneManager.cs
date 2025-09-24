@@ -887,28 +887,26 @@ public partial class BattleSceneManager : Node2D
 	
 	
 	
-	private List<SpeedDice> SortSpeedDieList(List<SpeedDice> InputList)
+	private List<SpeedDice> SortSpeedDieList(List<SpeedDice> SortingList) //Bubble sorts the input list based on the values of the die
 	{
-		List<SpeedDice> OutputList = new List<SpeedDice>();
-		while(InputList.Count > 0)
+		bool Sorted = false;
+		SpeedDice TempDice;
+		while (!Sorted)
 		{
-			int HighestSpeed = 0;
-			for(int Index = 0; Index<InputList.Count; Index++)
-			{if(InputList[Index].Value > HighestSpeed) {HighestSpeed = InputList[Index].Value;}}
-			for(int Index = 0; Index<InputList.Count; Index++)
+			Sorted = true;
+			for (int Index = 0; Index + 1 < SortingList.Count; Index++)
 			{
-				while(true && Index<InputList.Count)
+				if (SortingList[Index].Value > SortingList[Index + 1].Value)
 				{
-					if(InputList[Index].Value == HighestSpeed)
-					{
-						OutputList.Add(InputList[Index]);
-						InputList.RemoveAt(Index);
-					}
-					else {break;}
+					TempDice = SortingList[Index];
+					SortingList[Index] = SortingList[Index + 1];
+					SortingList[Index + 1] = TempDice;
+					Sorted = false;
 				}
 			}
 		}
-		return OutputList;
+		
+		return SortingList;
 	}
 	
 	

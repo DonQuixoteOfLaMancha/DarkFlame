@@ -88,6 +88,9 @@ public partial class CharCustomisation : Node2D
 				case 2: GetChild(1).GetChild(Index).GetChild<TextEdit>(0).Text = Convert.ToString(GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[GetParent<CharacterMenu>().SelectedCharacter].HairBlue); break;
 			}
 		}
+		
+		GetParent().GetChild(0).GetChild<Character>(3).CopyCharacter(GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[GetParent<CharacterMenu>().SelectedCharacter]);
+		GetParent().GetChild(0).GetChild<Character>(3).Refresh();
 	}
 	private void _Name_Changed()
 	{
@@ -99,7 +102,7 @@ public partial class CharCustomisation : Node2D
 		else
 		{
 			GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[GetParent<CharacterMenu>().SelectedCharacter].Name = InputName;
-			try{DisplayChar.GetChild<Label>(5).Text = GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[SelectedCharacter].Name;} catch{}
+			try{GetParent().GetChild(0).GetChild<Character>(3).GetChild<Label>(5).Text = GetParent().GetParent().GetParent().GetParent<GameManager>().PlayerTeam[GetParent<CharacterMenu>().SelectedCharacter].Name;} catch{}
 		}
 	}
 }

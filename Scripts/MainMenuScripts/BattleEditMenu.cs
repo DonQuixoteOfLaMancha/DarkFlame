@@ -50,6 +50,19 @@ public partial class BattleEditMenu : Node2D
 		EncounterIndex = 0;
 		UpdateEncounter();
 		GetChild(1).GetChild(8).GetChild<TextEdit>(0).Text = WorkingBattle.Name;
+		
+		switch(WorkingBattle.DiffGrade)
+		{
+			case 1: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("2e8799"); break;
+			case 2: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("660a0a"); break;
+			case 3: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("195e80"); break;
+			case 4: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("080a99"); break;
+			case 5: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("997a1f"); break;
+			default:
+				GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("cccccc");
+				break;
+		}
+		GetChild(1).GetChild(9).GetChild<Label>(4).Text = Convert.ToString(WorkingBattle.DiffGrade);
 	}
 	
 	private void UpdateEncounter()
@@ -78,6 +91,19 @@ public partial class BattleEditMenu : Node2D
 	private void _StrengthGrade_Changed(int IncDecValue)
 	{
 		WorkingBattle.DiffGrade += IncDecValue;
+		switch(WorkingBattle.DiffGrade)
+		{
+			case 1: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("2e8799"); break;
+			case 2: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("660a0a"); break;
+			case 3: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("195e80"); break;
+			case 4: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("080a99"); break;
+			case 5: GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("997a1f"); break;
+			default:
+				GetChild(1).GetChild(9).GetChild<Polygon2D>(3).Color = new Color("cccccc");
+				break;
+		}
+		
+		GetChild(1).GetChild(9).GetChild<Label>(4).Text = Convert.ToString(WorkingBattle.DiffGrade);
 	}
 	
 	
